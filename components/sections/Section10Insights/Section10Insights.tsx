@@ -36,13 +36,14 @@ export default function Section10Insights() {
           <SectionBadge align="center">EXECUTIVE INSIGHTS</SectionBadge>
         </motion.div>
 
+        {/* Restored High-Contrast Executive Insights Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <Heading level={2} className="text-2xl sm:text-3xl font-bold text-white tracking-tight text-center">
+          <Heading level={2} className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-[#111827] tracking-tight text-center mt-2 mb-3">
             Perspectives for Better Business Decisions
           </Heading>
         </motion.div>
@@ -53,13 +54,13 @@ export default function Section10Insights() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-sm sm:text-base text-[var(--muted)] leading-relaxed font-normal max-w-[580px] mx-auto text-center">
+          <p className="text-sm sm:text-base text-[#111827]/80 leading-relaxed font-normal max-w-[580px] mx-auto text-center">
             Thoughtful articles on finance, governance, taxation, compliance, and strategic advisory for business owners, directors, and management teams.
           </p>
         </motion.div>
       </div>
 
-      {/* 2 Featured Executive Insight Cards (Unchanged) */}
+      {/* 2 Featured Executive Insight Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {articles.map((item, idx) => (
           <motion.div

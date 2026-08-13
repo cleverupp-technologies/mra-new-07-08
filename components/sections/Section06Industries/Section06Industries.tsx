@@ -107,24 +107,24 @@ export default function Section06Industries() {
   ];
 
   return (
-    <section id="industries" className="py-20 sm:py-28 lg:py-32 bg-[#FAF8F1] border-b border-[#FFD978]/40 font-sans text-left overflow-hidden">
+    <section id="industries" className="py-20 sm:py-28 lg:py-32 bg-[#FAF8F1] border-b border-[#FFD978]/40 font-sans text-center overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         
-        {/* Section Header */}
-        <div className="flex flex-col items-start mb-12 sm:mb-16">
-          <SectionBadge align="left">INDUSTRIES WE SERVE</SectionBadge>
+        {/* Centered Section Header */}
+        <div className="flex flex-col items-center text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
+          <SectionBadge align="center">INDUSTRIES WE SERVE</SectionBadge>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-[#111827] tracking-tight leading-[1.15] mt-2 mb-4 max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-[#111827] tracking-tight leading-[1.15] mt-2 mb-4 max-w-3xl text-center">
             Commercial Advisory Across Key Sectors
           </h2>
 
-          <p className="font-sans text-sm sm:text-base text-[#111827]/80 max-w-2xl leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-[#111827]/80 max-w-2xl leading-relaxed text-center">
             Every business sector operates under distinct commercial pressures, capital cycles, and statutory compliance demands. We bring targeted financial and advisory experience across major industries.
           </p>
         </div>
 
-        {/* 8 Industry Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+        {/* 8 Industry Cards Grid (Unchanged) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 text-left">
           {industries.map((ind, idx) => {
             const Icon = ind.icon;
 

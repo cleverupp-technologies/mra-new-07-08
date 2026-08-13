@@ -214,7 +214,7 @@ export function ConsultationCTA({
         sourcePage: typeof window !== "undefined" ? window.location.pathname : "Website Consultation",
       });
 
-      if (res.status === "success" || res.status === "unconfigured") {
+      if (res.status === "success") {
         setStep(4);
       } else {
         setErrorMessage(

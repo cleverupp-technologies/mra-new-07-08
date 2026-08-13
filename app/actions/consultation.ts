@@ -1,9 +1,12 @@
 "use server";
 
+import { Resend } from "resend";
+
 /**
  * Server Action for Guided Consultation Requests & Resend Integration
  *
- * Handles team notification dispatch + visitor acknowledgement email using Resend API.
+ * Handles team notification dispatch + visitor acknowledgement email using Resend SDK.
+ * Keeps API keys strictly server-side without exposing credentials to the client.
  */
 
 export interface GuidedConsultationPayload {
@@ -27,12 +30,13 @@ export interface GuidedConsultationResponse {
   status: "success" | "error" | "validation_error" | "unconfigured";
   message: string;
   fieldErrors?: Record<string, string>;
+  debugInfo?: string;
 }
 
 export async function submitGuidedConsultation(
   payload: GuidedConsultationPayload
 ): Promise<GuidedConsultationResponse> {
-  console.log("[Server Action] Form submitted:", payload);
+  console.log("[Server Action] Consultation form submitted:", payload);
 
   const honeypot = (payload.website_url || "").trim();
 
@@ -41,7 +45,7 @@ export async function submitGuidedConsultation(
     console.log("[Server Action] Honeypot field filled - bot submission rejected");
     return {
       status: "unconfigured",
-      message: "Online consultation submission is undergoing configuration. Please contact our office directly.",
+      message: "Submission rejected by automated security checks.",
     };
   }
 
@@ -52,7 +56,7 @@ export async function submitGuidedConsultation(
   const industry = (payload.industry || "").trim();
   const name = (payload.name || "").trim();
   const preferredContact = payload.preferredContact || "Phone Call";
-  
+
   const rawPhone = (payload.phone || payload.contactValue || "").trim();
   const rawEmail = (payload.email || payload.contactValue || "").trim();
 
@@ -89,7 +93,7 @@ export async function submitGuidedConsultation(
     };
   }
 
-  // 4. Environment Variables
+  // 4. Server-Side Environment Variables Check
   const resendApiKey = process.env.RESEND_API_KEY;
   const receiverEmail =
     process.env.CONSULTATION_RECEIVER_EMAIL ||
@@ -101,126 +105,105 @@ export async function submitGuidedConsultation(
     "Manesh Rineesh & Associates <onboarding@resend.dev>";
 
   if (!resendApiKey) {
-    console.warn("[Server Action] RESEND_API_KEY environment variable is not configured. Logging request locally.");
+    console.warn(
+      "[Resend API Error] RESEND_API_KEY environment variable is missing in server environment (.env.local)."
+    );
     return {
-      status: "success",
-      message: "Thank you. Your consultation request has been received.",
+      status: "unconfigured",
+      message:
+        "Email delivery is not configured. Please add RESEND_API_KEY to .env.local on the server.",
+      debugInfo: "Missing RESEND_API_KEY environment variable",
     };
   }
 
   const now = new Date();
-  const timestamp = now.toLocaleDateString("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  }) + " " + now.toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
-  }) + " IST";
+  const timestamp =
+    now.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    }) +
+    " " +
+    now.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    }) +
+    " IST";
 
-  // 5. Construct Team Email Notification
+  // 5. Construct Team Email Notification Body
   const teamEmailText = [
-    "New Consultation Request",
+    "New Guided Consultation Request",
     "==================================================",
     "",
-    `Submitted At:`,
-    `${timestamp}`,
+    `Submitted At: ${timestamp}`,
+    `Source Page:  ${sourcePage}`,
     "",
-    `Topic`,
-    `${topic}`,
+    `Topic:        ${topic}`,
+    `Requirement:  ${requirement}`,
     "",
-    `Requirement`,
-    `${requirement}`,
+    `Business Name: ${businessName || "Not Provided"}`,
+    `Industry:      ${industry || "Not Selected"}`,
     "",
-    `Business Name`,
-    `${businessName || "Not Provided"}`,
-    "",
-    `Industry`,
-    `${industry || "Not Selected"}`,
-    "",
-    `Contact Name`,
-    `${name}`,
-    "",
-    `Preferred Contact Method`,
-    `${preferredContact}`,
-    "",
-    `Phone`,
-    `${phone || "Not Provided"}`,
-    "",
-    `Email`,
-    `${email || "Not Provided"}`,
-    "",
-    `Source`,
-    `${sourcePage}`,
+    `Contact Name:            ${name}`,
+    `Preferred Contact Method: ${preferredContact}`,
+    `Phone / WhatsApp:        ${phone}`,
+    `Email:                   ${email || "Not Provided"}`,
     "==================================================",
   ].join("\n");
 
   try {
-    // Dispatch Team Email
-    const teamResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: fromEmail,
-        to: [receiverEmail],
-        reply_to: email || undefined,
-        subject: `New Consultation Request — ${topic}`,
-        text: teamEmailText,
-      }),
+    // 6. Dispatch Email via Resend SDK
+    const resend = new Resend(resendApiKey);
+
+    const teamResult = await resend.emails.send({
+      from: fromEmail,
+      to: [receiverEmail],
+      replyTo: email || undefined,
+      subject: `New Consultation Request — ${topic}`,
+      text: teamEmailText,
     });
 
-    const teamData = await teamResponse.json().catch(() => null);
-
-    if (!teamResponse.ok) {
-      console.error("[Server Action] Resend API team notification failed:", teamResponse.status, teamData);
+    if (teamResult.error) {
+      console.error("[Resend API Error] Email dispatch failed:", teamResult.error);
+      return {
+        status: "error",
+        message: `Resend API Error: ${teamResult.error.message}`,
+        debugInfo: JSON.stringify(teamResult.error),
+      };
     }
 
-    // 6. Send Visitor Acknowledgement Email (if email provided)
+    console.log("[Resend API Success] Email dispatched successfully:", teamResult.data);
+
+    // 7. Visitor Acknowledgement (if valid email provided & domain permits)
     if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       const visitorEmailText = [
         `Hello ${name},`,
         "",
         "Thank you for contacting Manesh Rineesh & Associates.",
         "",
-        "We've received your consultation request regarding:",
+        `We have received your consultation request regarding: "${topic}".`,
         "",
-        `${topic}`,
-        "",
-        "Our team will review your request and contact you through your preferred communication method within one business day.",
+        "Our team will review your requirement and reach out via your preferred contact method within one business day.",
         "",
         "Regards,",
-        "",
         "Manesh Rineesh & Associates",
         "Chartered Accountants",
-        "60/4798, Third Floor, Span Hotel Complex,",
-        "Jail Road, Kozhikode – 673004, Kerala, India",
+        "Kozhikode, Kerala, India",
         "Phone: +91 95675 23620",
       ].join("\n");
 
-      const visitorResponse = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${resendApiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: fromEmail,
-          to: [email],
-          subject: "We've received your consultation request",
-          text: visitorEmailText,
-        }),
+      const visitorResult = await resend.emails.send({
+        from: fromEmail,
+        to: [email],
+        subject: "We've received your consultation request",
+        text: visitorEmailText,
       });
 
-      const visitorData = await visitorResponse.json().catch(() => null);
-      if (!visitorResponse.ok) {
+      if (visitorResult.error) {
         console.warn(
-          "[Server Action] Visitor acknowledgement email not sent via Resend:",
-          visitorResponse.status,
-          visitorData
+          "[Resend API Warning] Visitor acknowledgement email not sent:",
+          visitorResult.error
         );
       }
     }
@@ -229,11 +212,12 @@ export async function submitGuidedConsultation(
       status: "success",
       message: "Thank you. Your consultation request has been received.",
     };
-  } catch (error) {
-    console.error("[Server Action] Failed to dispatch consultation email via Resend:", error);
+  } catch (error: unknown) {
+    const errMessage = error instanceof Error ? error.message : String(error);
+    console.error("[Resend API Exception]:", errMessage);
     return {
       status: "error",
-      message: "Unable to submit your request. Please try again.",
+      message: `Server Error: ${errMessage}`,
     };
   }
 }
