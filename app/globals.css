@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../styles/contact-styles.css";
+
+:root {
+  /* Central Brand Design Tokens */
+  --color-cream: #FAF8F1;
+  --color-peach: #FFD978;
+  --color-orange: #F4B942;
+  --color-brown: #111827;
+
+  /* System Color Mappings */
+  --bg: #FAF8F1;
+  --surface: #FFD978;
+  --gold: #F4B942;
+  --text: #111827;
+  --muted: #7A4E20;
+  --border: rgba(17, 24, 39, 0.12);
+  --ease-executive: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-cream);
+  color: var(--color-brown);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--color-cream);
+  color: var(--color-brown);
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
+
+/* Custom Scrollbar Styles using Design Tokens */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-peach);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-orange);
+}
+
+/* Keynote Spotlight & Ambient Noise Texture */
+.keynote-bg {
+  background: 
+    radial-gradient(circle at 85% 15%, rgba(244, 185, 66, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(255, 217, 120, 0.25) 0%, var(--color-cream) 100%),
+    var(--color-cream);
+}
+
+.subtle-vignette {
+  box-shadow: inset 0 0 100px rgba(17, 24, 39, 0.15);
+}

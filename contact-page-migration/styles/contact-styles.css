@@ -1,0 +1,30 @@
+/* Custom Scrollbar and Keyframes for Contact Page Components */
+
+.custom-gold-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-gold-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-gold-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.35);
+  border-radius: 4px;
+}
+.custom-gold-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.8);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 300ms ease-out forwards;
+}

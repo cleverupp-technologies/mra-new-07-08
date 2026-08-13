@@ -1,0 +1,40 @@
+import type { V2IndustryUpdate } from "@/types/v2";
+
+export const v2IndustryUpdates: readonly V2IndustryUpdate[] = [
+  {
+    id: "update-healthcare-tpa",
+    slug: "tpa-claim-deduction-tds-rules-guidelines",
+    title: "IRDAI & Income Tax Mandates on TPA Claim Reconciliation",
+    summary: "Key statutory guidelines governing TDS deductions under Section 194J/194C on hospital claim reimbursements.",
+    industryIds: ["hospitals"],
+    topics: ["Healthcare", "Taxation", "TPA"],
+    published: true,
+    featured: true,
+    priority: 1,
+    publishedAt: "2024-04-01",
+  },
+  {
+    id: "update-mfg-depreciation",
+    slug: "section-32-additional-depreciation-machinery-rules",
+    title: "Maximizing Section 32 Additional Depreciation for Factory Expansion",
+    summary: "Tax shield parameters and Schedule II MCA asset useful life rules for new industrial plant machinery.",
+    industryIds: ["manufacturers"],
+    topics: ["Manufacturing", "Income Tax", "CapEx"],
+    published: true,
+    featured: true,
+    priority: 2,
+    publishedAt: "2024-04-12",
+  },
+  {
+    id: "update-real-estate-rera",
+    slug: "rera-escrow-withdrawal-audit-checklist",
+    title: "Updated RERA Escrow Withdrawal Audit & Certification Checklist",
+    summary: "Strict guidelines for quarterly CA Form 3 certifications and project completion percentage validation.",
+    industryIds: ["real-estate"],
+    topics: ["Real Estate", "RERA", "Compliance"],
+    published: true,
+    featured: true,
+    priority: 3,
+    publishedAt: "2024-05-02",
+  },
+];
