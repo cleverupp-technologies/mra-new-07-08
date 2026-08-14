@@ -83,12 +83,14 @@ interface ConsultationCTAProps {
   id?: string;
   initialTopicId?: string;
   initialIndustry?: string;
+  isPageHero?: boolean;
 }
 
 export function ConsultationCTA({
   id = "consultation",
   initialTopicId,
   initialIndustry,
+  isPageHero = false,
 }: ConsultationCTAProps) {
   // State
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
@@ -263,12 +265,21 @@ export function ConsultationCTA({
             <div className="space-y-4">
               <SectionBadge align="left" as="h2">LET&apos;S TALK</SectionBadge>
               
-              <p
-                id={`${id}-heading`}
-                className="font-serif font-bold text-3xl sm:text-4xl lg:text-[44px] text-[#111827] leading-[1.12] tracking-tight"
-              >
-                Let&apos;s discuss your next business decision.
-              </p>
+              {isPageHero ? (
+                <h1
+                  id={`${id}-heading`}
+                  className="font-serif font-bold text-3xl sm:text-4xl lg:text-[44px] text-[#111827] leading-[1.12] tracking-tight"
+                >
+                  Let&apos;s discuss your next business decision.
+                </h1>
+              ) : (
+                <p
+                  id={`${id}-heading`}
+                  className="font-serif font-bold text-3xl sm:text-4xl lg:text-[44px] text-[#111827] leading-[1.12] tracking-tight"
+                >
+                  Let&apos;s discuss your next business decision.
+                </p>
+              )}
               
               <p className="font-sans font-medium text-[17px] sm:text-[18px] lg:text-[24px] leading-[1.55] pt-1 max-w-lg">
                 <span className="text-[#111827]">

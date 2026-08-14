@@ -17,12 +17,12 @@ export function AboutVision() {
           className="max-w-[680px] ml-auto text-right flex flex-col items-end"
         >
           {/* Section Badge */}
-          <SectionBadge align="right">OUR VISION</SectionBadge>
+          <SectionBadge align="right" as="h2">OUR VISION</SectionBadge>
 
           {/* Main Heading: Redefining Practice Expectations */}
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15] mt-1 text-right">
+          <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15] mt-1 text-right">
             Redefining Practice Expectations
-          </h2>
+          </p>
 
           {/* Standard 60px × 3px Executive Gold Divider */}
           <div className="w-[60px] h-[3px] bg-[#F4B942] mt-5 mb-7 ml-auto" />

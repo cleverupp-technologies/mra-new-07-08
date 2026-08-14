@@ -7,12 +7,12 @@ export function AboutWhoWeAre() {
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">
           {/* Section Badge */}
-          <SectionBadge align="center">WHO WE ARE</SectionBadge>
+          <SectionBadge align="center" as="h2">WHO WE ARE</SectionBadge>
 
           {/* Section Heading */}
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] leading-[1.12] tracking-tight text-center">
+          <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] leading-[1.12] tracking-tight text-center">
             Integrated Financial Partnership
-          </h2>
+          </p>
 
           {/* Gold Accent Line (Centered) */}
           <div className="w-[60px] h-[3px] bg-[#F4B942] mt-4 mb-7 mx-auto" />

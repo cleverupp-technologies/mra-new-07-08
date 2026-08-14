@@ -17,12 +17,12 @@ export function AboutPhilosophy() {
           className="max-w-[760px] mx-auto text-center flex flex-col items-center"
         >
           {/* Centered Section Badge */}
-          <SectionBadge align="center">ABOUT</SectionBadge>
+          <SectionBadge align="center" as="h2">ABOUT</SectionBadge>
 
           {/* Main Heading: Strategy Before Compliance */}
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15] mt-1 text-center">
+          <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15] mt-1 text-center">
             Strategy Before Compliance
-          </h2>
+          </p>
 
           {/* Centered 60px Executive Gold Divider */}
           <div className="w-[60px] h-[3px] bg-[#F4B942] mt-5 mb-7 mx-auto" />

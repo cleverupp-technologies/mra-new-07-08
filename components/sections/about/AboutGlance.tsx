@@ -48,14 +48,14 @@ export function AboutGlance() {
           {/* Centered Introductory Header */}
           <div className="text-center">
             {/* Section Badge */}
-            <SectionBadge align="center">FIRM AT A GLANCE</SectionBadge>
+            <SectionBadge align="center" as="h2">FIRM AT A GLANCE</SectionBadge>
 
             {/* Main Heading */}
-            <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15] mt-1 text-center">
+            <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15] mt-1 text-center">
               Built in Kozhikode.
               <br />
               Serving Businesses Across South India.
-            </h2>
+            </p>
 
             {/* Standard 60px × 3px Executive Gold Divider */}
             <div className="w-[60px] h-[3px] bg-[#F4B942] mt-5 mb-7 mx-auto" />

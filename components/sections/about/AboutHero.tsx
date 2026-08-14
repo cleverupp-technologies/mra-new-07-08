@@ -246,7 +246,7 @@ export function AboutHero() {
             </nav>
 
             {/* Label Badge */}
-            <SectionBadge align="left">THE FIRM</SectionBadge>
+            <SectionBadge align="left" as="span">THE FIRM</SectionBadge>
 
             {/* Headline */}
             <h1

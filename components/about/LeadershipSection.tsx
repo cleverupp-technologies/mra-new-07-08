@@ -285,14 +285,14 @@ export function LeadershipSection() {
             transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >
-          <SectionBadge align="center">PRACTICE LEADERSHIP</SectionBadge>
-          <h2
+          <SectionBadge align="center" as="h2">PRACTICE LEADERSHIP</SectionBadge>
+          <p
             className="font-serif font-bold text-[#111827] leading-[1.1] tracking-tight mb-4 mt-1 text-center"
             style={{ fontSize: "clamp(2.1rem, 3.5vw, 3rem)" }}
           >
             Meet the Leadership Behind
             <br className="hidden sm:block" /> Better Business Decisions
-          </h2>
+          </p>
 
           {/* Gold Divider */}
           <div className="w-[60px] h-[3px] bg-[#F4B942] mt-4 mb-6 mx-auto" />

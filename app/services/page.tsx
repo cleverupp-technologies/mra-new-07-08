@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import HeroNav from "@/components/sections/Section01Hero/HeroNav";
 import Footer from "@/components/sections/Section12Footer/Section12Footer";
@@ -10,10 +11,54 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-export const metadata = {
-  title: "Services & Practice Capabilities | Manesh Rineesh & Associates",
+export const metadata: Metadata = {
+  title: "Manesh Rineesh & Associates | Practice Capabilities",
   description:
     "Explore our core financial advisory capabilities: Virtual CFO, Audit & Assurance, Tax Planning, Corporate Advisory, ROC Filing, and Compliance.",
+  alternates: {
+    canonical: "https://maneshrineesh.com/services",
+  },
+  openGraph: {
+    title: "Manesh Rineesh & Associates | Practice Capabilities",
+    description:
+      "Explore our core financial advisory capabilities: Virtual CFO, Audit & Assurance, Tax Planning, Corporate Advisory, ROC Filing, and Compliance.",
+    url: "https://maneshrineesh.com/services",
+    type: "website",
+    images: [
+      {
+        url: "/images/section-02-team.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Manesh Rineesh & Associates Chartered Accountants Firm Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manesh Rineesh & Associates | Practice Capabilities",
+    description:
+      "Explore our core financial advisory capabilities: Virtual CFO, Audit & Assurance, Tax Planning, Corporate Advisory, ROC Filing, and Compliance.",
+    images: ["/images/section-02-team.jpg"],
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://maneshrineesh.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://maneshrineesh.com/services",
+    },
+  ],
 };
 
 export default function ServicesOverviewPage() {
@@ -23,6 +68,10 @@ export default function ServicesOverviewPage() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F1] text-[#111827] font-sans selection:bg-[#F4B942] selection:text-[#111827]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* GLOBAL HEADER NAV */}
       <HeroNav />
 
@@ -41,7 +90,7 @@ export default function ServicesOverviewPage() {
             <span className="text-[#F4B942] font-bold">Services</span>
           </div>
 
-          <SectionBadge align="left">PRACTICE CAPABILITIES</SectionBadge>
+          <SectionBadge align="left" as="span">PRACTICE CAPABILITIES</SectionBadge>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#111827] leading-[1.1] tracking-tight">
             Comprehensive Financial Advisory &amp; Compliance Services
@@ -67,10 +116,10 @@ export default function ServicesOverviewPage() {
       <section className="py-20 lg:py-28 bg-[#FFD978]/25 border-t border-b border-[#FFD978] px-6 lg:px-12">
         <div className="max-w-[1240px] mx-auto space-y-16">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <SectionBadge align="center">FULL PRACTICE SPECTRUM</SectionBadge>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#111827]">
+            <SectionBadge align="center" as="h2">FULL PRACTICE SPECTRUM</SectionBadge>
+            <p className="text-3xl sm:text-4xl font-serif font-bold text-[#111827]">
               Our Practice Capabilities
-            </h2>
+            </p>
             <p className="text-sm sm:text-base text-[#111827]/80 font-sans leading-relaxed">
               Select a service area to explore detailed deliverables, methodology, and business impact.
             </p>

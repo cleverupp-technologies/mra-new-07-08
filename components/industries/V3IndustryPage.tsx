@@ -182,10 +182,10 @@ export function V3IndustryPage({ industry }: V3IndustryPageProps) {
         <Container>
           <div className="max-w-4xl space-y-6">
             <div className="space-y-2">
-              <SectionBadge align="left">SECTOR EXECUTIVE OVERVIEW</SectionBadge>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#111827] tracking-tight">
+              <SectionBadge align="left" as="h2">SECTOR EXECUTIVE OVERVIEW</SectionBadge>
+              <p className="text-2xl sm:text-3xl font-serif font-bold text-[#111827] tracking-tight">
                 Sector Advisory Focus: {industry.name}
-              </h2>
+              </p>
               <p className="font-sans text-[#111827]/85 text-base sm:text-lg leading-relaxed">
                 Manesh Rineesh &amp; Associates assists management teams in the {industry.name.toLowerCase()} sector to evaluate commercial decisions—such as working capital optimization, capital expenditure planning, MIS reporting, and statutory compliance—before operational issues become financial liabilities.
               </p>
@@ -217,10 +217,10 @@ export function V3IndustryPage({ industry }: V3IndustryPageProps) {
           <Container>
             <div className="max-w-4xl space-y-8">
               <div className="space-y-2">
-                <SectionBadge align="left">COMMERCIAL DECISION BOARD</SectionBadge>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#111827] tracking-tight">
+                <SectionBadge align="left" as="h2">COMMERCIAL DECISION BOARD</SectionBadge>
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#111827] tracking-tight">
                   Business Situations We Commonly Observe
-                </h2>
+                </p>
                 <p className="font-sans text-[#111827]/85 text-sm sm:text-base">
                   Select a decision context to review financial considerations, management framing, and MR&amp;A advisory approach.
                 </p>
@@ -289,12 +289,12 @@ export function V3IndustryPage({ industry }: V3IndustryPageProps) {
             <div className="max-w-4xl space-y-8">
               {/* Commercial Reality Header & Quote Box */}
               <div className="space-y-4 border-b border-[#FFD978]/40 pb-6">
-                <SectionBadge align="left">
+                <SectionBadge align="left" as="h2">
                   COMMERCIAL REALITY · {activeDecision.title.toUpperCase()}
                 </SectionBadge>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#111827]">
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#111827]">
                   Operational Dynamics &amp; Context
-                </h2>
+                </p>
                 <blockquote className="font-serif italic text-base sm:text-lg text-[#1F3A8A] bg-[#FAF8F1] p-4 rounded-xl border-l-4 border-[#F4B942] border border-[#FFD978]/60">
                   &ldquo;{activeDecision.recognitionLine}&rdquo;
                 </blockquote>

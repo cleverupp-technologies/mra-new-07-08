@@ -24,8 +24,7 @@ export const v2Industries: readonly V2Industry[] = [
     featured: true,
     priority: 1,
     seo: {
-      metaTitle:
-        "Healthcare Business & Practice Advisory | Manesh Rineesh & Associates",
+      metaTitle: "Healthcare Advisory | Manesh Rineesh & Associates",
       metaDescription:
         "Financial decision frameworks for growing healthcare organizations, medical clinics, and multi-location practices. Evaluate clinic expansion, equipment CapEx, and cash flow.",
       canonicalPath: "/industries/healthcare",

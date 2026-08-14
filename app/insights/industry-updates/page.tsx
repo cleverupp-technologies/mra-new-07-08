@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import HeroNav from "@/components/sections/Section01Hero/HeroNav";
 import Footer from "@/components/sections/Section12Footer/Section12Footer";
@@ -6,10 +7,70 @@ import ConsultationCTA from "@/components/consultation/ConsultationCTA";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { ChevronRight } from "lucide-react";
 
-export const metadata = {
-  title: "Industry Updates & Regulatory Alerts | Manesh Rineesh & Associates",
+export const metadata: Metadata = {
+  title: "Manesh Rineesh & Associates | Regulatory Updates",
   description:
     "Statutory updates, Income Tax notifications, GST compliance changes, and ROC filing deadlines for corporate entities.",
+  alternates: {
+    canonical: "https://maneshrineesh.com/insights/industry-updates",
+  },
+  openGraph: {
+    title: "Manesh Rineesh & Associates | Regulatory Updates",
+    description:
+      "Statutory updates, Income Tax notifications, GST compliance changes, and ROC filing deadlines for corporate entities.",
+    url: "https://maneshrineesh.com/insights/industry-updates",
+    type: "article",
+    images: [
+      {
+        url: "/images/section-02-team.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Manesh Rineesh & Associates Chartered Accountants Firm Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manesh Rineesh & Associates | Regulatory Updates",
+    description:
+      "Statutory updates, Income Tax notifications, GST compliance changes, and ROC filing deadlines for corporate entities.",
+    images: ["/images/section-02-team.jpg"],
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://maneshrineesh.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Insights",
+      item: "https://maneshrineesh.com/insights",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Industry Updates",
+      item: "https://maneshrineesh.com/insights/industry-updates",
+    },
+  ],
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Industry Updates & Statutory Briefings",
+  "description": "Timely notifications, statutory filing changes, and tax framework updates for corporate management.",
+  "author": { "@id": "https://maneshrineesh.com/#organization" },
+  "publisher": { "@id": "https://maneshrineesh.com/#organization" },
+  "mainEntityOfPage": "https://maneshrineesh.com/insights/industry-updates"
 };
 
 export default function IndustryUpdatesPage() {
@@ -39,6 +100,14 @@ export default function IndustryUpdatesPage() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F1] text-[#111827] font-sans selection:bg-[#F4B942] selection:text-[#111827]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <HeroNav />
 
       <section className="relative pt-36 sm:pt-44 lg:pt-48 pb-20 lg:pb-28 px-6 lg:px-12 max-w-[1400px] mx-auto overflow-hidden">
@@ -57,7 +126,7 @@ export default function IndustryUpdatesPage() {
             <span className="text-[#F4B942] font-bold">Industry Updates</span>
           </div>
 
-          <SectionBadge align="left">REGULATORY ALERTS</SectionBadge>
+          <SectionBadge align="left" as="span">REGULATORY ALERTS</SectionBadge>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#111827] leading-[1.1] tracking-tight">
             Industry Updates &amp; Statutory Briefings
@@ -83,9 +152,9 @@ export default function IndustryUpdatesPage() {
                 <span className="text-xs font-mono text-[#111827]/60 font-semibold">{upd.date}</span>
               </div>
 
-              <h2 className="text-2xl font-serif font-bold text-[#111827]">
+              <h3 className="text-2xl font-serif font-bold text-[#111827]">
                 {upd.title}
-              </h2>
+              </h3>
 
               <p className="text-sm sm:text-base text-[#111827]/85 leading-relaxed font-sans max-w-3xl">
                 {upd.summary}

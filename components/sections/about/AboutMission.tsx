@@ -17,12 +17,12 @@ export function AboutMission() {
           className="max-w-[680px] mr-auto text-left"
         >
           {/* Section Badge */}
-          <SectionBadge align="left">OUR MISSION</SectionBadge>
+          <SectionBadge align="left" as="h2">OUR MISSION</SectionBadge>
 
           {/* Main Heading: Clarity Before Capital */}
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15] mt-1 text-left">
+          <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15] mt-1 text-left">
             Clarity Before Capital
-          </h2>
+          </p>
 
           {/* Standard 60px × 3px Executive Gold Divider */}
           <div className="w-[60px] h-[3px] bg-[#F4B942] mt-5 mb-7 mr-auto" />

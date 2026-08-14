@@ -53,6 +53,21 @@ export async function generateMetadata({
       title: metaTitle,
       description: metaDescription,
       url: canonicalUrl,
+      type: "article",
+      images: [
+        {
+          url: "/images/section-02-team.jpg",
+          width: 1200,
+          height: 630,
+          alt: industry.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metaTitle,
+      description: metaDescription,
+      images: ["/images/section-02-team.jpg"],
     },
   };
 }

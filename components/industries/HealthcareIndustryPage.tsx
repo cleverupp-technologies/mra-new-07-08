@@ -176,10 +176,10 @@ export function HealthcareIndustryPage() {
         <Container>
           <div className="max-w-4xl space-y-8">
             <div className="space-y-2">
-              <SectionBadge align="left">COMMERCIAL OPERATING REALITY</SectionBadge>
-              <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#111827] tracking-tight">
+              <SectionBadge align="left" as="h2">COMMERCIAL OPERATING REALITY</SectionBadge>
+              <p className="text-2xl sm:text-3xl font-serif font-bold text-[#111827] tracking-tight">
                 Recognizable Healthcare Business Dynamics
-              </h2>
+              </p>
             </div>
 
             <div className="space-y-6 pt-2">
@@ -250,10 +250,10 @@ export function HealthcareIndustryPage() {
         <Container>
           <div className="max-w-4xl space-y-8">
             <div className="space-y-2">
-              <SectionBadge align="left">HEALTHCARE DECISION MATRIX</SectionBadge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#111827] tracking-tight">
+              <SectionBadge align="left" as="h2">HEALTHCARE DECISION MATRIX</SectionBadge>
+              <p className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#111827] tracking-tight">
                 Core Healthcare Management Problems
-              </h2>
+              </p>
               <p className="font-sans text-[#111827]/85 text-sm sm:text-base">
                 Select a commercial problem to examine its financial decision framing, management questions, and technical context.
               </p>
@@ -378,10 +378,10 @@ export function HealthcareIndustryPage() {
       <section className="py-16 sm:py-20 bg-white border-b border-[#FFD978]/40 text-left">
         <Container>
           <div className="max-w-4xl space-y-6">
-            <SectionBadge align="left">RELEVANT CAPABILITY</SectionBadge>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#111827]">
+            <SectionBadge align="left" as="h2">RELEVANT CAPABILITY</SectionBadge>
+            <p className="text-2xl sm:text-3xl font-serif font-bold text-[#111827]">
               Business Advisory &amp; Expansion Structuring
-            </h2>
+            </p>
             <p className="font-sans text-[#111827]/85 text-base sm:text-lg leading-relaxed">
               Business Advisory helps healthcare leadership structure major expansion decisions before capital is committed. Through scenario modeling, break-even analysis, and capital requirement evaluation, MR&amp;A brings financial clarity to growing practices.
             </p>
@@ -402,10 +402,10 @@ export function HealthcareIndustryPage() {
       <section className="py-16 sm:py-20 bg-[#FAF8F1] border-b border-[#FFD978]/40 text-left">
         <Container>
           <div className="max-w-4xl space-y-6">
-            <SectionBadge align="left">PROFESSIONAL DEPTH &amp; TRACK RECORD</SectionBadge>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#111827]">
+            <SectionBadge align="left" as="h2">PROFESSIONAL DEPTH &amp; TRACK RECORD</SectionBadge>
+            <p className="text-2xl sm:text-3xl font-serif font-bold text-[#111827]">
               Chartered Accountancy Practice Established in 2012
-            </h2>
+            </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-[#FFD978]/60">
               <div>
                 <span className="font-serif text-3xl sm:text-4xl text-[#1F3A8A] font-bold block">2012</span>

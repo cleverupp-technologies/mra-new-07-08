@@ -26,9 +26,34 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Industry Practice Sectors | Manesh Rineesh & Associates",
+  title: "Manesh Rineesh & Associates | Industry Sectors",
   description:
     "Decision-led Chartered Accountancy advisory across Healthcare, Manufacturing, Real Estate, Retail, NBFCs, Education, Textiles, and Pharma in Kerala.",
+  alternates: {
+    canonical: "https://maneshrineesh.com/industries",
+  },
+  openGraph: {
+    title: "Manesh Rineesh & Associates | Industry Sectors",
+    description:
+      "Decision-led Chartered Accountancy advisory across Healthcare, Manufacturing, Real Estate, Retail, NBFCs, Education, Textiles, and Pharma in Kerala.",
+    url: "https://maneshrineesh.com/industries",
+    type: "website",
+    images: [
+      {
+        url: "/images/section-02-team.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Manesh Rineesh & Associates Chartered Accountants Firm Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manesh Rineesh & Associates | Industry Sectors",
+    description:
+      "Decision-led Chartered Accountancy advisory across Healthcare, Manufacturing, Real Estate, Retail, NBFCs, Education, Textiles, and Pharma in Kerala.",
+    images: ["/images/section-02-team.jpg"],
+  },
 };
 
 function getIndustryIcon(slug: string) {
@@ -61,8 +86,31 @@ function getIndustryIcon(slug: string) {
 export default function IndustriesOverviewPage() {
   const industries = getAllPublishedIndustries();
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://maneshrineesh.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Industries",
+        item: "https://maneshrineesh.com/industries",
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-[#FAF8F1] text-[#111827] font-sans selection:bg-[#F4B942] selection:text-[#111827]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* 1. PRIMARY NAVIGATION HEADER */}
       <HeroNav />
 
@@ -104,12 +152,10 @@ export default function IndustriesOverviewPage() {
         <Container>
           <div className="max-w-4xl space-y-6">
             <div className="space-y-2">
-              <span className="font-mono text-xs font-bold text-[#F4B942] uppercase tracking-wider block">
-                01 · Flagship Industry Practice
-              </span>
-              <h2 className="font-serif font-bold text-2xl sm:text-3xl lg:text-4xl text-[#111827]">
+              <SectionBadge align="left" as="h2">01 · FLAGSHIP INDUSTRY PRACTICE</SectionBadge>
+              <p className="font-serif font-bold text-2xl sm:text-3xl lg:text-4xl text-[#111827]">
                 Hospitals &amp; Healthcare Enterprise
-              </h2>
+              </p>
               <p className="font-sans text-[#111827]/85 text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl">
                 Growing a healthcare business creates financial decisions far beyond clinical care—balancing multi-location clinic expansion, equipment CapEx payback, doctor profit-sharing, and reimbursement cash flows.
               </p>
@@ -165,12 +211,10 @@ export default function IndustriesOverviewPage() {
         <Container>
           <div className="max-w-4xl space-y-8">
             <div className="space-y-2">
-              <span className="font-mono text-xs font-bold text-[#F4B942] uppercase tracking-wider block">
-                02 · Secondary Sector Recognition
-              </span>
-              <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#111827]">
+              <SectionBadge align="left" as="h2">02 · SECONDARY SECTOR RECOGNITION</SectionBadge>
+              <p className="font-serif font-bold text-2xl sm:text-3xl text-[#111827]">
                 Recognized sector realities &amp; operating pressures.
-              </h2>
+              </p>
               <p className="font-sans text-[#111827]/85 text-sm sm:text-base leading-relaxed max-w-3xl">
                 Commercial enterprises face distinct capital structures, inventory cycles, and working capital demands based on their operating model.
               </p>
@@ -234,12 +278,10 @@ export default function IndustriesOverviewPage() {
         <Container>
           <div className="max-w-4xl space-y-8">
             <div className="space-y-2">
-              <span className="font-mono text-xs font-bold text-[#F4B942] uppercase tracking-wider block">
-                03 · Cross-Sector Decision Patterns
-              </span>
-              <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#111827]">
+              <SectionBadge align="left" as="h2">03 · CROSS-SECTOR DECISION PATTERNS</SectionBadge>
+              <p className="font-serif font-bold text-2xl sm:text-3xl text-[#111827]">
                 Financial decision patterns shared across commercial sectors.
-              </h2>
+              </p>
               <p className="font-sans text-[#111827]/85 text-sm sm:text-base leading-relaxed max-w-3xl">
                 While operating realities differ by industry, core management decisions share underlying financial logic across three key decision phases.
               </p>
@@ -291,12 +333,10 @@ export default function IndustriesOverviewPage() {
         <Container>
           <div className="max-w-4xl space-y-8">
             <div className="space-y-2">
-              <span className="font-mono text-xs font-bold text-[#F4B942] uppercase tracking-wider block">
-                04 · Connected Practice Nodes
-              </span>
-              <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#111827]">
+              <SectionBadge align="left" as="h2">04 · CONNECTED PRACTICE NODES</SectionBadge>
+              <p className="font-serif font-bold text-2xl sm:text-3xl text-[#111827]">
                 Connected practice insights &amp; advisory capabilities.
-              </h2>
+              </p>
               <p className="font-sans text-[#111827]/85 text-sm sm:text-base leading-relaxed max-w-3xl">
                 Explore MR&amp;A&apos;s decision publications and advisory frameworks for structured evaluation of business decisions.
               </p>
@@ -350,10 +390,10 @@ export default function IndustriesOverviewPage() {
         <Container>
           <div className="max-w-4xl space-y-8">
             <div className="space-y-2">
-              <SectionBadge align="left">ALL PRACTICE SECTORS</SectionBadge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#111827]">
+              <SectionBadge align="left" as="h2">ALL PRACTICE SECTORS</SectionBadge>
+              <p className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#111827]">
                 Sectors We Understand &amp; Serve
-              </h2>
+              </p>
               <p className="font-sans text-[#111827]/85 text-sm sm:text-base">
                 Click any industry practice sector to explore commercial decision contexts, operating realities, and relevant advisory services.
               </p>

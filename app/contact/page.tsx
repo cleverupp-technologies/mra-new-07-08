@@ -6,17 +6,33 @@ import { ContactPageClient } from "@/components/contact/ContactPageClient";
 import Section12Footer from "@/components/sections/Section12Footer/Section12Footer";
 
 export const metadata: Metadata = {
-  title: "Partner Consultation & Office Locations | Manesh Rineesh & Associates",
+  title: "Manesh Rineesh & Associates | Contact & Office Locations",
   description:
     "Connect with Manesh Rineesh & Associates to discuss your financial, tax, audit, or business decision requirements. Offices in Kozhikode HQ & Mukkam branch.",
   alternates: {
     canonical: `${siteConfig.baseUrl}/contact`,
   },
   openGraph: {
-    title: "Partner Consultation & Office Locations | Manesh Rineesh & Associates",
+    title: "Manesh Rineesh & Associates | Contact & Office Locations",
     description:
       "Connect with Manesh Rineesh & Associates to discuss your financial, tax, audit, or business decision requirements. Offices in Kozhikode HQ & Mukkam branch.",
     url: `${siteConfig.baseUrl}/contact`,
+    type: "website",
+    images: [
+      {
+        url: "/images/section-02-team.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Manesh Rineesh & Associates Chartered Accountants Firm Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manesh Rineesh & Associates | Contact & Office Locations",
+    description:
+      "Connect with Manesh Rineesh & Associates to discuss your financial, tax, audit, or business decision requirements. Offices in Kozhikode HQ & Mukkam branch.",
+    images: ["/images/section-02-team.jpg"],
   },
 };
 
@@ -60,16 +76,11 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      {/* 1. Global Navigation Header */}
       <HeroNav />
-
-      {/* 2. Migrated Contact Page Client Component */}
       <ContactPageClient
         initialTopicId={initialTopicId}
         initialIndustry={initialIndustry}
       />
-
-      {/* 3. Institutional Footer */}
       <Section12Footer />
     </main>
   );

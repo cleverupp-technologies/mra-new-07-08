@@ -50,12 +50,12 @@ export function AboutValues() {
           {/* Centered Introductory Header */}
           <div className="text-center">
             {/* Section Badge */}
-            <SectionBadge align="center">OUR VALUES</SectionBadge>
+            <SectionBadge align="center" as="h2">OUR VALUES</SectionBadge>
 
             {/* Main Heading: Governing Principles */}
-            <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15] mt-1 text-center">
+            <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15] mt-1 text-center">
               Governing Principles
-            </h2>
+            </p>
 
             {/* Standard 60px × 3px Executive Gold Divider */}
             <div className="w-[60px] h-[3px] bg-[#F4B942] mt-5 mb-7 mx-auto" />

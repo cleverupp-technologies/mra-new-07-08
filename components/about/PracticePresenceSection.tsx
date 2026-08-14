@@ -104,12 +104,12 @@ export function PracticePresenceSection() {
             transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
           }}
         >
-          <SectionBadge align="center">05 &bull; PRACTICE PRESENCE</SectionBadge>
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15]">
+          <SectionBadge align="center" as="h2">PRACTICE PRESENCE</SectionBadge>
+          <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-[1.15]">
             Built in Kozhikode.
             <br />
             Serving Businesses Across South India.
-          </h2>
+          </p>
           <div className="w-[60px] h-[3px] bg-[#F4B942] mx-auto mt-5 mb-6" />
           <p className="font-sans text-[#111827]/82 text-base sm:text-lg leading-relaxed mx-auto max-w-[680px]">
             Our headquarters and regional office work together to deliver audit,
@@ -243,7 +243,7 @@ export function PracticePresenceSection() {
             >
               <div className="bg-[#FAF8F1] rounded-[28px] border border-[#FFD978]/30 p-8 sm:p-10 space-y-6 shadow-xl hover:border-[#F4B942]/50 transition-all duration-300">
                 <div>
-                  <SectionBadge align="left">HEADQUARTERS</SectionBadge>
+                  <SectionBadge align="left" as="h2">HEADQUARTERS</SectionBadge>
                   <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#111827] tracking-tight">
                     Kozhikode Headquarters
                   </h3>
@@ -352,7 +352,7 @@ export function PracticePresenceSection() {
             >
               <div className="bg-[#FAF8F1] rounded-[28px] border border-[#FFD978]/30 p-8 sm:p-10 space-y-6 shadow-xl hover:border-[#F4B942]/50 transition-all duration-300">
                 <div>
-                  <SectionBadge align="left">REGIONAL OFFICE</SectionBadge>
+                  <SectionBadge align="left" as="h2">REGIONAL OFFICE</SectionBadge>
                   <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#111827] tracking-tight">
                     Mukkam Office
                   </h3>

@@ -32,6 +32,7 @@ export function ContactPageClient({
         id="contact-consultation"
         initialTopicId={initialTopicId}
         initialIndustry={initialIndustry}
+        isPageHero={true}
       />
 
       {/* ─────────────────────────────────────────────────────────────────

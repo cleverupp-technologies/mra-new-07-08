@@ -14,6 +14,8 @@ import {
   Award,
 } from "lucide-react";
 
+import type { Metadata } from "next";
+
 interface ServiceDetailProps {
   params: {
     slug: string;
@@ -26,6 +28,45 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({
+  params,
+}: ServiceDetailProps): Promise<Metadata> {
+  const service = SERVICES_DATABASE[params.slug];
+  if (!service) return {};
+
+  const title = `${service.title} | Manesh Rineesh & Associates`;
+  const description = service.description;
+  const canonicalUrl = `https://maneshrineesh.com/services/${service.slug}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      type: "article",
+      images: [
+        {
+          url: "/images/section-02-team.jpg",
+          width: 1200,
+          height: 630,
+          alt: service.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/images/section-02-team.jpg"],
+    },
+  };
+}
+
 export default function ServiceDetailPage({ params }: ServiceDetailProps) {
   const service = SERVICES_DATABASE[params.slug];
 
@@ -33,8 +74,37 @@ export default function ServiceDetailPage({ params }: ServiceDetailProps) {
     notFound();
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://maneshrineesh.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://maneshrineesh.com/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: service.title,
+        item: `https://maneshrineesh.com/services/${service.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF8F1] text-[#111827] font-sans selection:bg-[#F4B942] selection:text-[#111827]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* GLOBAL HEADER NAV */}
       <HeroNav />
 
@@ -95,10 +165,10 @@ export default function ServiceDetailPage({ params }: ServiceDetailProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Header */}
             <div className="lg:col-span-5 space-y-4">
-              <SectionBadge align="left">BUSINESS CONTEXT &amp; CHALLENGE</SectionBadge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#111827] leading-tight">
+              <SectionBadge align="left" as="h2">BUSINESS CONTEXT &amp; CHALLENGE</SectionBadge>
+              <p className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#111827] leading-tight">
                 {service.problemTitle}
-              </h2>
+              </p>
               <p className="text-sm sm:text-base text-[#111827]/85 leading-relaxed font-sans pt-2">
                 {service.problemDescription}
               </p>
@@ -129,10 +199,10 @@ export default function ServiceDetailPage({ params }: ServiceDetailProps) {
       {/* ── SECTION 3: WHAT WE DELIVER (DELIVERABLES GRID) ──────────────── */}
       <section className="py-20 lg:py-28 px-6 lg:px-12 max-w-[1240px] mx-auto">
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-          <SectionBadge align="center">PRACTICE DELIVERABLES</SectionBadge>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#111827]">
+          <SectionBadge align="center" as="h2">PRACTICE DELIVERABLES</SectionBadge>
+          <p className="text-3xl sm:text-4xl font-serif font-bold text-[#111827]">
             What We Deliver in {service.title}
-          </h2>
+          </p>
           <p className="text-sm sm:text-base text-[#111827]/80 font-sans leading-relaxed">
             Structured engagement frameworks designed to maintain compliance, mitigate risk, and drive outcomes.
           </p>
@@ -169,10 +239,10 @@ export default function ServiceDetailPage({ params }: ServiceDetailProps) {
         <div className="max-w-[1240px] mx-auto space-y-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#FFD978]">
             <div>
-              <SectionBadge align="left">OUR METHODOLOGY</SectionBadge>
-              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#111827]">
+              <SectionBadge align="left" as="h2">OUR METHODOLOGY</SectionBadge>
+              <p className="text-3xl sm:text-4xl font-serif font-bold text-[#111827]">
                 How We Engage
-              </h2>
+              </p>
             </div>
             <p className="text-sm text-[#111827]/80 font-sans max-w-md">
               A structured 4-phase methodology ensuring smooth implementation and ongoing continuous advisory support.
@@ -201,10 +271,10 @@ export default function ServiceDetailPage({ params }: ServiceDetailProps) {
       <section className="py-20 lg:py-28 px-6 lg:px-12 max-w-[1240px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 space-y-4">
-            <SectionBadge align="left">TARGET SECTORS &amp; ENTITIES</SectionBadge>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#111827]">
+            <SectionBadge align="left" as="h2">TARGET SECTORS &amp; ENTITIES</SectionBadge>
+            <p className="text-3xl sm:text-4xl font-serif font-bold text-[#111827]">
               Who This Service Is For
-            </h2>
+            </p>
             <p className="text-sm sm:text-base text-[#111827]/80 leading-relaxed font-sans">
               Tailored for enterprises seeking clear commercial governance, compliance discipline, and financial clarity.
             </p>
@@ -230,10 +300,10 @@ export default function ServiceDetailPage({ params }: ServiceDetailProps) {
       <section className="py-20 lg:py-28 bg-[#FFD978]/25 border-t border-b border-[#FFD978] px-6 lg:px-12">
         <div className="max-w-[1240px] mx-auto space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <SectionBadge align="center">THE FIRM DIFFERENCE</SectionBadge>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#111827]">
+            <SectionBadge align="center" as="h2">THE FIRM DIFFERENCE</SectionBadge>
+            <p className="text-3xl sm:text-4xl font-serif font-bold text-[#111827]">
               Why Manesh Rineesh &amp; Associates
-            </h2>
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
