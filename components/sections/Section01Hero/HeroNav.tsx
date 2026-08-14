@@ -101,20 +101,13 @@ export function HeroNav() {
 
               {/* Manesh Rineesh & Associates Title + CHARTERED ACCOUNTANTS Subtitle */}
               <div className="flex flex-col text-left justify-center min-w-0">
-                <h1 className={`text-[19px] sm:text-[21px] lg:text-[22px] xl:text-[25px] font-extrabold leading-[1.1] font-serif tracking-tight drop-shadow-sm group-hover:text-[#F4B942] transition-colors ${
+                <span className={`text-[19px] sm:text-[21px] lg:text-[22px] xl:text-[25px] font-extrabold leading-[1.1] font-serif tracking-tight drop-shadow-sm group-hover:text-[#F4B942] transition-colors block ${
                   scrolled ? "text-[#FAF8F1]" : isLightPage ? "text-[#111827]" : "text-white"
                 }`}>
-                  {/* Mobile / Tablet (< 1024px): 2 Lines */}
-                  <span className="lg:hidden">
-                    Manesh Rineesh<br />
-                    <span className="font-sans font-bold mr-1">&amp;</span>Associates
-                  </span>
-
-                  {/* Desktop (>= 1024px): Single Continuous Line */}
-                  <span className="hidden lg:inline-flex items-center gap-1.5 whitespace-nowrap">
-                    Manesh Rineesh <span className="font-sans font-bold">&amp;</span> Associates
-                  </span>
-                </h1>
+                  Manesh Rineesh<br className="lg:hidden" />
+                  <span className="hidden lg:inline">&nbsp;</span>
+                  <span className="font-sans font-bold mr-1 lg:mr-1.5">&amp;</span>Associates
+                </span>
                 
                 <span className="text-[9px] sm:text-[10px] lg:text-[10.5px] xl:text-[11.5px] font-semibold uppercase tracking-[0.28em] text-[#F4B942] mt-1 font-sans block whitespace-nowrap">
                   CHARTERED ACCOUNTANTS
