@@ -52,12 +52,12 @@ export default function Section03WhoWeHelp() {
       <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-16 text-center">
         
         {/* 1. Eyebrow Badge */}
-        <SectionBadge align="center">WHO WE HELP</SectionBadge>
+        <SectionBadge align="center" as="h2">WHO WE HELP</SectionBadge>
 
         {/* 2. Main Heading: Centered Editorial Serif Display */}
-        <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] text-[#111827] tracking-tight leading-[1.15] mb-8 sm:mb-10 lg:mb-12 max-w-4xl text-center mx-auto">
+        <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] text-[#111827] tracking-tight leading-[1.15] mb-8 sm:mb-10 lg:mb-12 max-w-4xl text-center mx-auto">
           Built for Businesses That Make Important Decisions
-        </h2>
+        </p>
 
         {/* 3. Two-Column Supporting Narrative */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 font-sans font-medium text-[17px] sm:text-[18px] lg:text-[24px] leading-[1.55] text-left">
@@ -84,9 +84,9 @@ export default function Section03WhoWeHelp() {
                 <div className="w-8 h-8 rounded-full bg-[#FFD978]/25 border border-[#FFD978]/40 flex items-center justify-center text-[#F4B942] shrink-0">
                   <Icon className="w-4 h-4" />
                 </div>
-                <span className="font-sans font-medium text-base sm:text-[17px] text-[#111827] leading-snug">
+                <h3 className="font-sans font-medium text-base sm:text-[17px] text-[#111827] leading-snug">
                   {segment.title}
-                </span>
+                </h3>
               </div>
             );
           })}

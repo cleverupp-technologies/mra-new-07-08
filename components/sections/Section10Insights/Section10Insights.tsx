@@ -33,7 +33,7 @@ export default function Section10Insights() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
-          <SectionBadge align="center">EXECUTIVE INSIGHTS</SectionBadge>
+          <SectionBadge align="center" as="h2">EXECUTIVE INSIGHTS</SectionBadge>
         </motion.div>
 
         {/* Restored High-Contrast Executive Insights Heading */}
@@ -43,9 +43,9 @@ export default function Section10Insights() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <Heading level={2} className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-[#111827] tracking-tight text-center mt-2 mb-3">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-[#111827] tracking-tight text-center mt-2 mb-3">
             Perspectives for Better Business Decisions
-          </Heading>
+          </p>
         </motion.div>
 
         <motion.div

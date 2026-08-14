@@ -112,11 +112,11 @@ export default function Section06Industries() {
         
         {/* Centered Section Header */}
         <div className="flex flex-col items-center text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
-          <SectionBadge align="center">INDUSTRIES WE SERVE</SectionBadge>
+          <SectionBadge align="center" as="h2">INDUSTRIES WE SERVE</SectionBadge>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-[#111827] tracking-tight leading-[1.15] mt-2 mb-4 max-w-3xl text-center">
+          <p className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-[#111827] tracking-tight leading-[1.15] mt-2 mb-4 max-w-3xl text-center">
             Commercial Advisory Across Key Sectors
-          </h2>
+          </p>
 
           <p className="font-sans text-sm sm:text-base text-[#111827]/80 max-w-2xl leading-relaxed text-center">
             Every business sector operates under distinct commercial pressures, capital cycles, and statutory compliance demands. We bring targeted financial and advisory experience across major industries.

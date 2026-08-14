@@ -11,9 +11,9 @@ export default function Section12Footer() {
         {/* Header Area — Firm Identity Block */}
         <div className="border-b border-[#FFD978]/22 pb-8 mb-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold font-serif tracking-tight text-[#FAF8F1] mb-1">
+            <p className="text-xl sm:text-2xl font-bold font-serif tracking-tight text-[#FAF8F1] mb-1">
               Manesh Rineesh &amp; Associates
-            </h2>
+            </p>
             <p className="text-xs font-mono font-bold tracking-[0.2em] text-[#F4B942] uppercase">
               CHARTERED ACCOUNTANTS
             </p>

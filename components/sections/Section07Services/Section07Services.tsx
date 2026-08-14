@@ -82,10 +82,10 @@ export default function Section07Services() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mb-10 sm:mb-12 text-center"
         >
-          <SectionBadge align="center">PRACTICE AREAS</SectionBadge>
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-tight mt-1 text-center">
+          <SectionBadge align="center" as="h2">PRACTICE AREAS</SectionBadge>
+          <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-tight mt-1 text-center">
             Services We Offer
-          </h2>
+          </p>
         </motion.div>
 
         {/* Primary 6 Practice Area Cards (Unchanged) */}

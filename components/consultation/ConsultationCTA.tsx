@@ -261,14 +261,14 @@ export function ConsultationCTA({
           >
             {/* HEADLINE BLOCK */}
             <div className="space-y-4">
-              <SectionBadge align="left">LET&apos;S TALK</SectionBadge>
+              <SectionBadge align="left" as="h2">LET&apos;S TALK</SectionBadge>
               
-              <h2
+              <p
                 id={`${id}-heading`}
                 className="font-serif font-bold text-3xl sm:text-4xl lg:text-[44px] text-[#111827] leading-[1.12] tracking-tight"
               >
                 Let&apos;s discuss your next business decision.
-              </h2>
+              </p>
               
               <p className="font-sans font-medium text-[17px] sm:text-[18px] lg:text-[24px] leading-[1.55] pt-1 max-w-lg">
                 <span className="text-[#111827]">
@@ -707,9 +707,9 @@ export function ConsultationCTA({
 
                       {/* NEXT STEPS */}
                       <div className="space-y-3 pt-2">
-                        <h4 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#FFD978]">
+                        <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#FFD978] block">
                           WHAT HAPPENS NEXT
-                        </h4>
+                        </span>
                         <ul className="space-y-2.5 font-sans text-sm text-[#FAF8F1]/85">
                           <li className="flex items-center gap-3">
                             <span className="w-5 h-5 rounded-full bg-[#F4B942]/20 border border-[#F4B942]/40 flex items-center justify-center text-[#F4B942] text-xs font-bold shrink-0">

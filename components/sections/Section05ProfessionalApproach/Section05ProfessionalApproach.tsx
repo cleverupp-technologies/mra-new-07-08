@@ -44,10 +44,10 @@ export default function Section05ProfessionalApproach() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12 sm:mb-16 lg:mb-20 text-center"
         >
-          <SectionBadge align="center">ENGAGEMENT METHODOLOGY</SectionBadge>
-          <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-tight text-center">
+          <SectionBadge align="center" as="h2">ENGAGEMENT METHODOLOGY</SectionBadge>
+          <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-tight text-center">
             Methodology of Assignments
-          </h2>
+          </p>
         </motion.div>
 
         {/* ── DESKTOP LAYOUT (>= 1024px): Single Horizontal Timeline (Unchanged) ── */}

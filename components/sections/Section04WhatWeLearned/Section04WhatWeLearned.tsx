@@ -44,7 +44,7 @@ export default function Section04WhatWeLearned() {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="flex justify-center lg:justify-start"
             >
-              <SectionBadge align="left">WHAT WE LEARNED</SectionBadge>
+              <SectionBadge align="left" as="h2">WHAT WE LEARNED</SectionBadge>
             </motion.div>
 
             <motion.div
@@ -53,9 +53,9 @@ export default function Section04WhatWeLearned() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-[52px] text-[#111827] tracking-tight leading-[1.18] max-w-[500px] lg:max-w-none mx-auto lg:mx-0 text-center lg:text-left">
+              <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-[52px] text-[#111827] tracking-tight leading-[1.18] max-w-[500px] lg:max-w-none mx-auto lg:mx-0 text-center lg:text-left">
                 Despite operating in different industries, businesses often face similar financial decision-making challenges.
-              </h2>
+              </p>
             </motion.div>
           </div>
 

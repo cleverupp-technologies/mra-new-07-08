@@ -18,7 +18,7 @@ export default function Section02Introduction() {
       <div className="lg:hidden w-full max-w-[640px] md:max-w-[768px] mx-auto px-5 sm:px-6 relative z-10 flex flex-col space-y-7">
         {/* Mobile Eyebrow Badge */}
         <div className="flex flex-col items-start space-y-2">
-          <SectionBadge align="left">ABOUT THE FIRM</SectionBadge>
+          <SectionBadge align="left" as="span">ABOUT THE FIRM</SectionBadge>
           <div className="w-10 sm:w-12 h-[2px] bg-[#F4B942] rounded-full" />
         </div>
 
@@ -63,7 +63,7 @@ export default function Section02Introduction() {
           {/* ── LEFT SIDE — FIRM SCALE / PROOF (Vertical Statistics Column) ── */}
           <div className="lg:col-span-3 xl:col-span-3 flex flex-col justify-start pr-8 border-r border-[#FFD978]/20 select-none">
             <div className="space-y-3 mb-10">
-              <SectionBadge align="left">ABOUT THE FIRM</SectionBadge>
+              <SectionBadge align="left" as="h2">ABOUT THE FIRM</SectionBadge>
               <div className="w-12 h-[2.5px] bg-[#F4B942] rounded-full" />
             </div>
 
