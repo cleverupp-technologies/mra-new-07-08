@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
@@ -17,6 +17,7 @@ export function HeroNav() {
   const [isInsightsOpen, setIsInsightsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +32,23 @@ export function HeroNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  {/* Hash scroll listener on home page landing */}
+  useEffect(() => {
+    if (pathname === "/" && typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash === "#industries" || hash === "#services") {
+        const targetId = hash.replace("#", "");
+        const timer = setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [pathname]);
+
   const isLightPage = pathname === "/contact" || pathname.startsWith("/services") || pathname.startsWith("/industries") || pathname.startsWith("/insights");
 
   const navItems = [
@@ -41,6 +59,39 @@ export function HeroNav() {
     { name: "Insights", href: "/insights" },
     { name: "Contact", href: "/contact" },
   ];
+
+  const handleMobileNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    item: { name: string; href: string }
+  ) => {
+    setIsOpen(false);
+
+    if (item.name === "Industries" || item.href === "/industries") {
+      e.preventDefault();
+      if (pathname === "/") {
+        const el = document.getElementById("industries");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        router.push("/#industries");
+      }
+      return;
+    }
+
+    if (item.name === "Services" || item.href === "/services") {
+      e.preventDefault();
+      if (pathname === "/") {
+        const el = document.getElementById("services");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        router.push("/#services");
+      }
+      return;
+    }
+  };
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -100,7 +151,7 @@ export function HeroNav() {
                 <span className="text-[19px] sm:text-[21px] lg:text-[22px] xl:text-[25px] font-extrabold leading-[1.1] font-serif tracking-tight drop-shadow-sm group-hover:text-[#F4B942] transition-colors block text-[#1F3A8A]">
                   Manesh Rineesh<br className="lg:hidden" />
                   <span className="hidden lg:inline">&nbsp;</span>
-                  <span className="font-sans font-bold mr-1 lg:mr-1.5">&amp;</span>Associates
+                  &amp; Associates
                 </span>
                 
                 <span className="text-[9px] sm:text-[10px] lg:text-[10.5px] xl:text-[11.5px] font-semibold uppercase tracking-[0.28em] text-[#F4B942] mt-1 font-sans block whitespace-nowrap">
@@ -784,7 +835,7 @@ export function HeroNav() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      onClick={() => setIsOpen(false)}
+                      onClick={(e) => handleMobileNavClick(e, item)}
                       className={`text-lg sm:text-xl lg:text-2xl font-serif font-bold tracking-tight flex items-center justify-between transition-colors py-2 border-b border-[#FAF8F1]/15 ${
                         active ? "text-[#F4B942]" : "text-[#FAF8F1] hover:text-[#F4B942]"
                       }`}

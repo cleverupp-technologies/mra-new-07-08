@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maneshrineesh.com"),
@@ -145,7 +146,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppCTA />
+      </body>
     </html>
   );
 }
