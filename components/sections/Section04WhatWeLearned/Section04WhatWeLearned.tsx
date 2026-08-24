@@ -31,7 +31,7 @@ export default function Section04WhatWeLearned() {
   ];
 
   return (
-    <section id="what-we-learned" className="w-full bg-[#FAF8F1] py-16 sm:py-24 lg:py-32 border-b border-[#FFD978]/30 font-sans">
+    <section id="what-we-learned" className="w-full bg-[#FFFFFF] py-16 sm:py-24 lg:py-32 border-b border-[#E5E7EB] font-sans">
       <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
@@ -72,32 +72,32 @@ export default function Section04WhatWeLearned() {
                   onClick={() => setActiveIndex(index)}
                   className={`cursor-pointer transition-all duration-300 ease-out pl-6 sm:pl-8 border-l-2 relative ${
                     isActive
-                      ? "border-l-[#F4B942] opacity-100"
-                      : "border-l-[#FFD978]/50 opacity-60 hover:opacity-90"
+                      ? "border-l-[#1F3A8A] opacity-100"
+                      : "border-l-[#FFD978]/50 opacity-70 hover:opacity-100"
                   }`}
                 >
-                  {/* Insight Number Badge */}
+                  {/* Insight Number Badge — Level 1 Label */}
                   <span
                     className={`text-xs lg:text-sm font-mono font-bold tracking-[0.2em] block mb-2 transition-colors duration-300 ${
-                      isActive ? "text-[#F4B942]" : "text-[#111827]/50"
+                      isActive ? "text-[#1F3A8A]" : "text-[#4B5563]"
                     }`}
                   >
                     {item.id}
                   </span>
 
-                  {/* Insight Heading */}
+                  {/* Insight Heading — Level 3 Heading */}
                   <h3
                     className={`text-lg sm:text-xl lg:text-2xl font-bold tracking-tight mb-2.5 transition-colors duration-300 ${
-                      isActive ? "text-[#111827]" : "text-[#111827]/75"
+                      isActive ? "text-[#111827]" : "text-[#111827]/80"
                     }`}
                   >
                     {item.heading}
                   </h3>
 
-                  {/* Insight Description */}
+                  {/* Insight Description — Level 4 Description */}
                   <p
                     className={`text-sm sm:text-base lg:text-[17px] leading-[1.7] max-w-[480px] lg:max-w-xl transition-colors duration-300 ${
-                      isActive ? "text-[#111827]/90 font-medium" : "text-[#111827]/70 font-normal"
+                      isActive ? "text-[#4B5563] font-medium" : "text-[#4B5563]/80 font-normal"
                     }`}
                   >
                     {item.description}

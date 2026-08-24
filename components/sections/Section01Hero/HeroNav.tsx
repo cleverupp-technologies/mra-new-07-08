@@ -57,17 +57,15 @@ export function HeroNav() {
       <header
         style={{
           backgroundColor: scrolled
-            ? "rgba(31, 58, 138, 0.68)"
+            ? "rgba(250, 248, 241, 0.95)"
             : "transparent",
           backdropFilter: scrolled ? "blur(14px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(14px)" : "none",
         }}
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ease-out ${
           scrolled
-            ? "border-b border-[#FFD978]/20 shadow-[0_10px_25px_-5px_rgba(0,0,0,0.25)] py-3 sm:py-3.5 lg:py-4 text-[#FAF8F1]"
-            : isLightPage
-            ? "border-b border-transparent py-5 sm:py-6 lg:py-7 text-[#111827]"
-            : "border-b border-transparent py-5 sm:py-6 lg:py-7 text-white"
+            ? "border-b border-[#FFD978]/40 shadow-sm py-3 sm:py-3.5 lg:py-4 text-[#111827]"
+            : "border-b border-transparent py-5 sm:py-6 lg:py-7 text-[#111827]"
         }`}
       >
         <div className="flex items-center justify-between px-6 lg:px-12 max-w-[1400px] mx-auto w-full transition-all duration-300">
@@ -79,10 +77,8 @@ export function HeroNav() {
               aria-label="Toggle navigation menu"
               className={`lg:hidden w-11 h-11 rounded-full border flex items-center justify-center transition-colors active:scale-95 flex-shrink-0 cursor-pointer ${
                 scrolled
-                  ? "border-white/20 bg-white/10 text-[#FAF8F1] hover:border-[#F4B942]"
-                  : isLightPage
-                  ? "border-[#111827]/20 bg-[#FAF8F1]/80 text-[#111827] hover:border-[#F4B942]"
-                  : "border-white/15 bg-black/40 text-white hover:border-[#F4B942]/50"
+                  ? "border-[#FFD978]/60 bg-[#FAF8F1] text-[#111827] hover:border-[#F4B942]"
+                  : "border-[#111827]/20 bg-[#FAF8F1]/80 text-[#111827] hover:border-[#F4B942]"
               }`}
             >
               {isOpen ? <X className="w-5 h-5 text-[#F4B942]" /> : <Menu className="w-5 h-5" />}
@@ -101,9 +97,7 @@ export function HeroNav() {
 
               {/* Manesh Rineesh & Associates Title + CHARTERED ACCOUNTANTS Subtitle */}
               <div className="flex flex-col text-left justify-center min-w-0">
-                <span className={`text-[19px] sm:text-[21px] lg:text-[22px] xl:text-[25px] font-extrabold leading-[1.1] font-serif tracking-tight drop-shadow-sm group-hover:text-[#F4B942] transition-colors block ${
-                  scrolled ? "text-[#FAF8F1]" : isLightPage ? "text-[#111827]" : "text-white"
-                }`}>
+                <span className="text-[19px] sm:text-[21px] lg:text-[22px] xl:text-[25px] font-extrabold leading-[1.1] font-serif tracking-tight drop-shadow-sm group-hover:text-[#F4B942] transition-colors block text-[#1F3A8A]">
                   Manesh Rineesh<br className="lg:hidden" />
                   <span className="hidden lg:inline">&nbsp;</span>
                   <span className="font-sans font-bold mr-1 lg:mr-1.5">&amp;</span>Associates
@@ -118,6 +112,17 @@ export function HeroNav() {
 
           {/* Right Side: Desktop Navigation Links & Mega-Menu */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 font-sans">
+            <Link
+              href="/"
+              className={`text-xs xl:text-[13px] font-semibold tracking-[0.18em] transition-colors uppercase whitespace-nowrap ${
+                pathname === "/"
+                  ? "text-[#F4B942] font-bold"
+                  : "text-[#111827] hover:text-[#F4B942]"
+              }`}
+            >
+              HOME
+            </Link>
+
             {/* INDUSTRIES ITEM WITH DROPDOWN */}
             <div
               className="relative"
@@ -131,10 +136,10 @@ export function HeroNav() {
                   isIndustriesOpen || pathname.startsWith("/industries")
                     ? "text-[#F4B942] font-bold"
                     : scrolled
-                    ? "text-[#FAF8F1]/90 hover:text-[#F4B942]"
+                    ? "text-[#111827] hover:text-[#F4B942]"
                     : isLightPage
                     ? "text-[#111827] hover:text-[#F4B942]"
-                    : "text-white/90 hover:text-[#F4B942]"
+                    : "text-[#111827] hover:text-[#F4B942]"
                 }`}
               >
               <span>INDUSTRIES</span>
@@ -348,10 +353,10 @@ export function HeroNav() {
                 isServicesOpen || pathname.startsWith("/services")
                   ? "text-[#F4B942] font-bold"
                   : scrolled
-                  ? "text-[#FAF8F1]/90 hover:text-[#F4B942]"
+                  ? "text-[#111827] hover:text-[#F4B942]"
                   : isLightPage
                   ? "text-[#111827] hover:text-[#F4B942]"
-                  : "text-white/90 hover:text-[#F4B942]"
+                  : "text-[#111827] hover:text-[#F4B942]"
               }`}
             >
               <span>SERVICES</span>
@@ -609,10 +614,10 @@ export function HeroNav() {
                 isInsightsOpen || pathname.startsWith("/insights")
                   ? "text-[#F4B942] font-bold"
                   : scrolled
-                  ? "text-[#FAF8F1]/90 hover:text-[#F4B942]"
+                  ? "text-[#111827] hover:text-[#F4B942]"
                   : isLightPage
                   ? "text-[#111827] hover:text-[#F4B942]"
-                  : "text-white/90 hover:text-[#F4B942]"
+                  : "text-[#111827] hover:text-[#F4B942]"
               }`}
             >
               <span>INSIGHTS</span>
@@ -729,10 +734,10 @@ export function HeroNav() {
               pathname === "/about"
                 ? "text-[#F4B942] font-bold"
                 : scrolled
-                ? "text-[#FAF8F1]/90 hover:text-[#F4B942]"
+                ? "text-[#111827] hover:text-[#F4B942]"
                 : isLightPage
                 ? "text-[#111827] hover:text-[#F4B942]"
-                : "text-white/90 hover:text-[#F4B942]"
+                : "text-[#111827] hover:text-[#F4B942]"
             }`}
           >
             ABOUT
@@ -744,10 +749,10 @@ export function HeroNav() {
               pathname === "/contact"
                 ? "text-[#F4B942] font-bold"
                 : scrolled
-                ? "text-[#FAF8F1]/90 hover:text-[#F4B942]"
+                ? "text-[#111827] hover:text-[#F4B942]"
                 : isLightPage
                 ? "text-[#111827] hover:text-[#F4B942]"
-                : "text-white/90 hover:text-[#F4B942]"
+                : "text-[#111827] hover:text-[#F4B942]"
             }`}
           >
             CONTACT

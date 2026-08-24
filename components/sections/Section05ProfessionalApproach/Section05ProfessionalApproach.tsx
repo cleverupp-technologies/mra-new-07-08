@@ -33,7 +33,7 @@ export default function Section05ProfessionalApproach() {
   ];
 
   return (
-    <section id="professional-approach" className="w-full bg-[#FAF8F1] py-16 sm:py-24 lg:py-32 border-b border-[#FFD978]/30 font-sans">
+    <section id="professional-approach" className="w-full bg-[#FAF8F1] py-16 sm:py-24 lg:py-32 border-b border-[#FFD978]/40 font-sans">
       <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-16">
         
         {/* Section Header (Centered on Both Desktop and Mobile) */}
@@ -66,23 +66,23 @@ export default function Section05ProfessionalApproach() {
                 transition={{ duration: 0.5, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col items-start select-none cursor-default"
               >
-                {/* Numbered Marker Circle Sitting Directly on Timeline */}
-                <div className="w-10 h-10 rounded-full bg-[#FAF8F1] border-2 border-[#F4B942] text-[#F4B942] font-serif font-bold text-base flex items-center justify-center mb-6 z-10 relative">
+                {/* Numbered Marker Circle — Level 1 Label */}
+                <div className="w-10 h-10 rounded-full bg-[#1F3A8A] border-2 border-[#F4B942] text-[#FFD978] font-serif font-bold text-base flex items-center justify-center mb-6 z-10 relative shadow-md">
                   {s.num}
                 </div>
 
-                {/* Step Eyebrow Label */}
-                <span className="font-mono text-[11px] font-bold text-[#F4B942] tracking-[0.2em] uppercase mb-2 block">
+                {/* Step Eyebrow Label — Level 1 Label */}
+                <span className="font-mono text-[11px] font-bold text-[#1F3A8A] tracking-[0.2em] uppercase mb-2 block">
                   {s.step}
                 </span>
 
-                {/* Step Title in Dark Brown */}
+                {/* Step Title — Level 3 Heading */}
                 <h3 className="font-serif font-bold text-xl lg:text-[22px] text-[#111827] leading-snug mb-3">
                   {s.title}
                 </h3>
 
-                {/* Step Description */}
-                <p className="font-sans font-normal text-sm lg:text-[15px] text-[#111827]/85 leading-[1.7]">
+                {/* Step Description — Level 4 Description */}
+                <p className="font-sans font-normal text-sm lg:text-[15px] text-[#4B5563] leading-[1.7]">
                   {s.description}
                 </p>
               </motion.div>
@@ -101,23 +101,23 @@ export default function Section05ProfessionalApproach() {
               transition={{ duration: 0.4, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="relative select-none cursor-default"
             >
-              {/* Vertical Timeline Marker */}
-              <div className="absolute -left-[33px] sm:-left-[41px] top-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#FAF8F1] border-2 border-[#F4B942] text-[#F4B942] font-serif font-bold text-xs sm:text-sm flex items-center justify-center">
+              {/* Vertical Timeline Marker — Level 1 Label */}
+              <div className="absolute -left-[33px] sm:-left-[41px] top-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#1F3A8A] border-2 border-[#F4B942] text-[#FFD978] font-serif font-bold text-xs sm:text-sm flex items-center justify-center shadow-md">
                 {s.num}
               </div>
 
-              {/* Step Eyebrow */}
-              <span className="font-mono text-[10px] sm:text-[11px] font-bold text-[#F4B942] tracking-[0.2em] uppercase mb-1 block">
+              {/* Step Eyebrow — Level 1 Label */}
+              <span className="font-mono text-[10px] sm:text-[11px] font-bold text-[#1F3A8A] tracking-[0.2em] uppercase mb-1 block">
                 {s.step}
               </span>
 
-              {/* Step Title */}
+              {/* Step Title — Level 3 Heading */}
               <h3 className="font-serif font-bold text-lg sm:text-xl text-[#111827] leading-snug mb-2">
                 {s.title}
               </h3>
 
-              {/* Step Description */}
-              <p className="font-sans font-normal text-sm sm:text-base text-[#111827]/85 leading-[1.7]">
+              {/* Step Description — Level 4 Description */}
+              <p className="font-sans font-normal text-sm sm:text-base text-[#4B5563] leading-[1.7]">
                 {s.description}
               </p>
             </motion.div>

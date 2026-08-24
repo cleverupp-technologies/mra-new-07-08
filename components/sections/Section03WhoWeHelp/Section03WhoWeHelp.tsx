@@ -48,7 +48,7 @@ export default function Section03WhoWeHelp() {
   ];
 
   return (
-    <section id="who-we-help" className="w-full bg-[#FAF8F1] py-16 sm:py-24 lg:py-32 border-b border-[#FFD978]/30 font-sans">
+    <section id="who-we-help" className="w-full bg-[#FAF8F1] py-16 sm:py-24 lg:py-32 border-b border-[#FFD978]/40 font-sans">
       <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-16 text-center">
         
         {/* 1. Eyebrow Badge */}
@@ -61,10 +61,10 @@ export default function Section03WhoWeHelp() {
 
         {/* 3. Two-Column Supporting Narrative */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 font-sans font-medium text-[17px] sm:text-[18px] lg:text-[24px] leading-[1.55] text-left">
-          <p className="text-[#111827]">
+          <p className="text-[#4B5563]">
             Our practice is structured to support management teams, owner-managers, and decision-makers in commercial enterprises encountering critical decision contexts—such as capacity expansion, working capital constraints, capital expenditure planning, MIS reporting, and statutory compliance.
           </p>
-          <p className="text-[#111827]/90">
+          <p className="text-[#4B5563]">
             Through disciplined financial analysis, regulatory insight, and proactive advisory, we partner with client leadership to establish clear fiscal visibility, strengthen internal controls, and navigate complex statutory environments with strategic confidence.
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function Section03WhoWeHelp() {
                 key={segment.title}
                 className="flex items-center space-x-3.5 select-none py-1 cursor-default"
               >
-                <div className="w-8 h-8 rounded-full bg-[#FFD978]/25 border border-[#FFD978]/40 flex items-center justify-center text-[#F4B942] shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#FFFFFF] border border-[#FFD978]/50 flex items-center justify-center text-[#F4B942] shrink-0 shadow-sm">
                   <Icon className="w-4 h-4" />
                 </div>
                 <h3 className="font-sans font-medium text-base sm:text-[17px] text-[#111827] leading-snug">

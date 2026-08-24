@@ -71,25 +71,24 @@ export default function Section07Services() {
   ];
 
   return (
-    <section id="services" className="w-full bg-[#FAF8F1] py-16 sm:py-24 lg:py-32 border-b border-[#FFD978]/30 font-sans">
+    <section id="services" className="w-full bg-[#FAF8F1] py-16 sm:py-24 lg:py-32 border-b border-[#FFD978]/40 font-sans">
       <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-16">
         
-        {/* Section Header (Centered on Both Desktop and Mobile) */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-10 sm:mb-12 text-center"
-        >
+        {/* Centered Section Header */}
+        <div className="flex flex-col items-center text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
           <SectionBadge align="center" as="h2">PRACTICE AREAS</SectionBadge>
-          <p className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#111827] tracking-tight leading-tight mt-1 text-center">
-            Services We Offer
+          
+          <p className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-[#111827] tracking-tight leading-[1.15] mt-2 mb-4 max-w-3xl text-center">
+            Comprehensive Advisory &amp; Statutory Assurance
           </p>
-        </motion.div>
+
+          <p className="font-sans text-sm sm:text-base text-[#111827]/80 max-w-2xl leading-relaxed text-center">
+            Integrated professional services structured around business decision contexts, regulatory compliance, and long-term financial stability.
+          </p>
+        </div>
 
         {/* Primary 6 Practice Area Cards (Unchanged) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 text-left">
           {primaryServices.map((srv, idx) => {
             const Icon = srv.icon;
 
@@ -100,30 +99,30 @@ export default function Section07Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                className="relative overflow-hidden rounded-[22px] bg-[#111214] border border-white/10 p-6 sm:p-7 flex flex-col justify-between group transition-all duration-300 ease-out hover:border-[#F4B942]/60 hover:bg-[#16181c] shadow-lg shadow-black/30 select-none cursor-default"
+                className="relative overflow-hidden rounded-[22px] bg-[#FFFFFF] border border-[#FFD978]/50 p-6 sm:p-7 flex flex-col justify-between group transition-all duration-300 ease-out hover:border-[#F4B942] hover:shadow-md shadow-sm select-none cursor-default"
               >
-                {/* Top Orange Accent Line */}
+                {/* Top Gold Accent Line */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#F4B942]/70 to-transparent group-hover:via-[#F4B942] transition-all duration-300" />
 
                 <div>
                   {/* Circular Icon Badge */}
-                  <div className="w-11 h-11 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-[#F4B942] mb-5 group-hover:border-[#F4B942] transition-all duration-300">
+                  <div className="w-11 h-11 rounded-full bg-[#FAF8F1] border border-[#FFD978]/40 flex items-center justify-center text-[#F4B942] mb-5 group-hover:border-[#F4B942] transition-all duration-300 shadow-sm">
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  {/* Service Title */}
-                  <h3 className="font-serif font-bold text-xl text-[#FFFEF7] mb-2 tracking-tight">
+                  {/* Service Title — Level 3 Heading */}
+                  <h3 className="font-serif font-bold text-xl text-[#111827] mb-2 tracking-tight">
                     {srv.name}
                   </h3>
 
-                  {/* Service Description */}
-                  <p className="font-sans font-normal text-sm sm:text-base text-[#FFD978]/90 leading-relaxed line-clamp-3">
+                  {/* Service Description — Level 4 Description */}
+                  <p className="font-sans font-normal text-sm sm:text-base text-[#4B5563] leading-relaxed line-clamp-3">
                     {srv.description}
                   </p>
                 </div>
 
-                {/* Bottom CTA Indicator */}
-                <div className="mt-6 pt-2 text-xs font-bold text-[#F4B942] flex items-center gap-1.5">
+                {/* Bottom CTA Indicator — Level 2 CTA */}
+                <div className="mt-6 pt-2 text-xs font-bold text-[#1F3A8A] flex items-center gap-1.5">
                   <span>Professional Scope</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>
@@ -135,7 +134,7 @@ export default function Section07Services() {
         {/* Progressively Revealed Additional 3 Cards (Unchanged) */}
         <AnimatePresence>
           {isExpanded && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-5 sm:mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-5 sm:mt-6 text-left">
               {additionalServices.map((srv, idx) => {
                 const Icon = srv.icon;
 
@@ -145,30 +144,30 @@ export default function Section07Services() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: idx * 0.07, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative overflow-hidden rounded-[22px] bg-[#111214] border border-white/10 p-6 sm:p-7 flex flex-col justify-between group transition-all duration-300 ease-out hover:border-[#F4B942]/60 hover:bg-[#16181c] shadow-lg shadow-black/30 select-none cursor-default"
+                    className="relative overflow-hidden rounded-[22px] bg-[#FFFFFF] border border-[#FFD978]/50 p-6 sm:p-7 flex flex-col justify-between group transition-all duration-300 ease-out hover:border-[#F4B942] hover:shadow-md shadow-sm select-none cursor-default"
                   >
-                    {/* Top Orange Accent Line */}
+                    {/* Top Gold Accent Line */}
                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#F4B942]/70 to-transparent group-hover:via-[#F4B942] transition-all duration-300" />
 
                     <div>
                       {/* Circular Icon Badge */}
-                      <div className="w-11 h-11 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-[#F4B942] mb-5 group-hover:border-[#F4B942] transition-all duration-300">
+                      <div className="w-11 h-11 rounded-full bg-[#FAF8F1] border border-[#FFD978]/40 flex items-center justify-center text-[#F4B942] mb-5 group-hover:border-[#F4B942] transition-all duration-300 shadow-sm">
                         <Icon className="w-5 h-5" />
                       </div>
 
-                      {/* Service Title */}
-                      <h3 className="font-serif font-bold text-xl text-[#FFFEF7] mb-2 tracking-tight">
+                      {/* Service Title — Level 3 Heading */}
+                      <h3 className="font-serif font-bold text-xl text-[#111827] mb-2 tracking-tight">
                         {srv.name}
                       </h3>
 
-                      {/* Service Description */}
-                      <p className="font-sans font-normal text-sm sm:text-base text-[#FFD978]/90 leading-relaxed line-clamp-3">
+                      {/* Service Description — Level 4 Description */}
+                      <p className="font-sans font-normal text-sm sm:text-base text-[#4B5563] leading-relaxed line-clamp-3">
                         {srv.description}
                       </p>
                     </div>
 
-                    {/* Bottom CTA Indicator */}
-                    <div className="mt-6 pt-2 text-xs font-bold text-[#F4B942] flex items-center gap-1.5">
+                    {/* Bottom CTA Indicator — Level 2 CTA */}
+                    <div className="mt-6 pt-2 text-xs font-bold text-[#1F3A8A] flex items-center gap-1.5">
                       <span>Professional Scope</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </div>

@@ -46,7 +46,7 @@ export default function HeroSocials() {
   return (
     <div className="absolute right-3 sm:right-6 lg:right-9 top-1/2 -translate-y-1/2 z-30 select-none hidden sm:block">
       {/* Subtle Premium Opaque Container providing visual breathing room */}
-      <div className="p-2 sm:p-2.5 rounded-full bg-[#0B0B0D]/50 backdrop-blur-md border border-white/10 shadow-xl flex flex-col items-center gap-3">
+      <div className="p-2 sm:p-2.5 rounded-full bg-[#FAF8F1] backdrop-blur-md border border-[#FFD978]/60 shadow-md flex flex-col items-center gap-3">
         {socials.map((social) => (
           <a
             key={social.name}
@@ -55,7 +55,7 @@ export default function HeroSocials() {
             rel={social.rel}
             aria-label={social.name}
             style={{ WebkitBackdropFilter: "blur(8px)" }}
-            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/15 text-white/90 flex items-center justify-center transition-all duration-200 hover:text-[#F4B942] hover:bg-white/20 hover:border-[#F4B942]/50 hover:scale-105 active:scale-95 shadow-sm cursor-pointer"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#FFFFFF] border border-[#FFD978]/40 text-[#111827] flex items-center justify-center transition-all duration-200 hover:text-[#F4B942] hover:bg-[#FAF8F1] hover:border-[#F4B942] hover:scale-105 active:scale-95 shadow-sm cursor-pointer"
           >
             {social.renderIcon()}
           </a>

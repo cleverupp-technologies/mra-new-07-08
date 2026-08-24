@@ -107,7 +107,7 @@ export default function Section06Industries() {
   ];
 
   return (
-    <section id="industries" className="py-20 sm:py-28 lg:py-32 bg-[#FAF8F1] border-b border-[#FFD978]/40 font-sans text-center overflow-hidden">
+    <section id="industries" className="py-20 sm:py-28 lg:py-32 bg-[#FFFFFF] border-b border-[#FFD978]/40 font-sans text-center overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
         
         {/* Centered Section Header */}
@@ -118,7 +118,7 @@ export default function Section06Industries() {
             Commercial Advisory Across Key Sectors
           </p>
 
-          <p className="font-sans text-sm sm:text-base text-[#111827]/80 max-w-2xl leading-relaxed text-center">
+          <p className="font-sans text-sm sm:text-base text-[#4B5563] max-w-2xl leading-relaxed text-center">
             Every business sector operates under distinct commercial pressures, capital cycles, and statutory compliance demands. We bring targeted financial and advisory experience across major industries.
           </p>
         </div>

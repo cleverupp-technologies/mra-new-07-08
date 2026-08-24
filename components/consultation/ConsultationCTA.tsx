@@ -340,23 +340,23 @@ export function ConsultationCTA({
               transitionDelay: "150ms",
             }}
           >
-            {/* PREMIUM #1F3A8A BRANDED DECISION PANEL CONTAINER */}
-            <div className="bg-[#1F3A8A] border border-[#FFD978]/30 rounded-[28px] p-6 sm:p-8 lg:p-10 shadow-xl min-h-[580px] flex flex-col justify-between relative overflow-hidden text-[#FAF8F1]">
+            {/* PREMIUM LIGHT BRANDED DECISION PANEL CONTAINER */}
+            <div className="bg-[#FFFFFF] border border-[#FFD978]/50 rounded-[28px] p-6 sm:p-8 lg:p-10 shadow-xl min-h-[580px] flex flex-col justify-between relative overflow-hidden text-[#111827]">
               
-              {/* SUBTLE PATTERNED BACKGROUND OVERLAYS ON #1F3A8A */}
-              <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:18px_18px] opacity-40 pointer-events-none" />
-              <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(ellipse_at_top_right,rgba(244,185,66,0.15),transparent_70%)] pointer-events-none" />
+              {/* SUBTLE PATTERNED BACKGROUND OVERLAYS */}
+              <div className="absolute inset-0 bg-[radial-gradient(rgba(244,185,66,0.06)_1px,transparent_1px)] [background-size:18px_18px] opacity-40 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(ellipse_at_top_right,rgba(244,185,66,0.12),transparent_70%)] pointer-events-none" />
 
               {/* TOP PROGRESS INDICATOR */}
               {step < 4 && (
-                <div className="space-y-3 pb-5 border-b border-white/15 shrink-0 relative z-10">
+                <div className="space-y-3 pb-5 border-b border-[#FFD978]/40 shrink-0 relative z-10">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2 font-mono text-xs font-bold uppercase tracking-wider">
-                      <span className={step === 1 ? "text-[#FFD978] font-bold" : "text-[#FAF8F1]/40"}>Step 1</span>
-                      <span className="text-[#F4B942]">&rarr;</span>
-                      <span className={step === 2 ? "text-[#FFD978] font-bold" : "text-[#FAF8F1]/40"}>Step 2</span>
-                      <span className="text-[#F4B942]">&rarr;</span>
-                      <span className={step === 3 ? "text-[#FFD978] font-bold" : "text-[#FAF8F1]/40"}>Step 3</span>
+                      <span className={step === 1 ? "bg-[#1F3A8A] text-[#FFD978] px-2.5 py-0.5 rounded-full font-bold shadow-sm" : "text-[#4B5563]"}>Step 1</span>
+                      <span className="text-[#1F3A8A]">&rarr;</span>
+                      <span className={step === 2 ? "bg-[#1F3A8A] text-[#FFD978] px-2.5 py-0.5 rounded-full font-bold shadow-sm" : "text-[#4B5563]"}>Step 2</span>
+                      <span className="text-[#1F3A8A]">&rarr;</span>
+                      <span className={step === 3 ? "bg-[#1F3A8A] text-[#FFD978] px-2.5 py-0.5 rounded-full font-bold shadow-sm" : "text-[#4B5563]"}>Step 3</span>
                     </div>
 
                     {step > 1 && (
@@ -366,7 +366,7 @@ export function ConsultationCTA({
                           setErrorMessage(null);
                           setStep((prev) => Math.max(prev - 1, 1) as 1 | 2 | 3);
                         }}
-                        className="font-mono text-xs font-bold text-[#FFD978] hover:text-white transition-colors cursor-pointer"
+                        className="font-mono text-xs font-bold text-[#1F3A8A] hover:text-[#F4B942] transition-colors cursor-pointer"
                       >
                         &larr; Back
                       </button>
@@ -374,7 +374,7 @@ export function ConsultationCTA({
                   </div>
 
                   {/* PROGRESS BAR */}
-                  <div className="w-full h-1.5 bg-white/15 rounded-full overflow-hidden">
+                  <div className="w-full h-1.5 bg-[#FFD978]/30 rounded-full overflow-hidden">
                     <div
                       className="h-full bg-[#F4B942] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"
                       style={{ width: `${(step / 3) * 100}%` }}
@@ -390,16 +390,16 @@ export function ConsultationCTA({
                 {step === 1 && (
                   <div className="space-y-6 flex-1 flex flex-col justify-between">
                     <div className="space-y-1.5">
-                      <h3 className="font-serif font-bold text-2xl sm:text-3xl lg:text-[32px] text-[#FAF8F1] leading-tight">
+                      <h3 className="font-serif font-bold text-2xl sm:text-3xl lg:text-[32px] text-[#111827] leading-tight">
                         What brings you to MR&amp;A?
                       </h3>
-                      <p className="font-sans text-[#FAF8F1]/80 text-sm sm:text-base leading-relaxed">
+                      <p className="font-sans text-[#111827]/80 text-sm sm:text-base leading-relaxed">
                         Select the option that matches your current requirement.
                       </p>
                     </div>
 
                     {errorMessage && (
-                      <div className="p-3 rounded-xl bg-red-500/20 border border-red-400/40 text-red-200 text-xs font-medium">
+                      <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
                         {errorMessage}
                       </div>
                     )}
@@ -416,8 +416,8 @@ export function ConsultationCTA({
                               onClick={() => handleTopicClick(topic.id)}
                               className={`w-full text-left p-4 sm:p-5 rounded-[20px] border transition-all duration-200 ease-out group cursor-pointer flex items-center justify-between gap-4 ${
                                 isSelected
-                                  ? "bg-[#162B68] border-[#F4B942] shadow-md ring-1 ring-[#F4B942]/40"
-                                  : "bg-[#183175]/70 border-white/15 hover:bg-[#1c3784] hover:border-white/35"
+                                  ? "bg-[#FFD978]/25 border-[#F4B942] shadow-md ring-1 ring-[#F4B942]/40"
+                                  : "bg-[#FAF8F1] border-[#FFD978]/40 hover:bg-[#FFFDF7] hover:border-[#F4B942]"
                               }`}
                             >
                               <div className="flex items-start gap-4 sm:gap-5 min-w-0 flex-1">
@@ -427,12 +427,12 @@ export function ConsultationCTA({
                                 <div className="space-y-1 min-w-0 max-w-[90%]">
                                   <h4
                                     className={`font-serif font-bold text-base sm:text-lg lg:text-xl transition-colors leading-snug ${
-                                      isSelected ? "text-[#FAF8F1]" : "text-[#FAF8F1]/90 group-hover:text-[#FAF8F1]"
+                                      isSelected ? "text-[#111827]" : "text-[#111827] group-hover:text-[#F4B942]"
                                     }`}
                                   >
                                     {topic.title}
                                   </h4>
-                                  <p className="font-sans text-xs sm:text-sm text-[#FAF8F1]/75 leading-relaxed">
+                                  <p className="font-sans text-xs sm:text-sm text-[#111827]/75 leading-relaxed">
                                     {topic.description}
                                   </p>
                                 </div>
@@ -452,16 +452,16 @@ export function ConsultationCTA({
                 {step === 2 && (
                   <div className="space-y-6 flex-1 flex flex-col justify-between">
                     <div className="space-y-1.5">
-                      <h3 className="font-serif font-bold text-2xl sm:text-3xl lg:text-[32px] text-[#FAF8F1] leading-tight">
+                      <h3 className="font-serif font-bold text-2xl sm:text-3xl lg:text-[32px] text-[#111827] leading-tight">
                         Tell us about your requirement
                       </h3>
-                      <p className="font-sans text-[#FAF8F1]/80 text-sm sm:text-base leading-relaxed">
-                        Topic: <span className="text-[#FFD978] font-semibold">{selectedTopic?.title}</span>
+                      <p className="font-sans text-[#111827]/80 text-sm sm:text-base leading-relaxed">
+                        Topic: <span className="text-[#F4B942] font-semibold">{selectedTopic?.title}</span>
                       </p>
                     </div>
 
                     {errorMessage && (
-                      <div className="p-3 rounded-xl bg-red-500/20 border border-red-400/40 text-red-200 text-xs font-medium">
+                      <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
                         {errorMessage}
                       </div>
                     )}
@@ -469,7 +469,7 @@ export function ConsultationCTA({
                     <div className="space-y-5 max-w-2xl py-2 flex-1">
                       {/* REQUIREMENT TEXTAREA */}
                       <div className="space-y-2">
-                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#FFD978] block">
+                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#F4B942] block">
                           REQUIREMENT *
                         </label>
                         <textarea
@@ -478,16 +478,16 @@ export function ConsultationCTA({
                           placeholder="Briefly describe your business situation or the assistance you're looking for."
                           value={requirement}
                           onChange={(e) => setRequirement(e.target.value)}
-                          className="w-full bg-[#162B68]/80 border border-white/20 rounded-xl p-4 text-[#FAF8F1] placeholder-[#FAF8F1]/40 focus:border-[#F4B942] focus:outline-none transition-colors text-base leading-relaxed resize-none"
+                          className="w-full bg-[#FAF8F1] border border-[#FFD978]/50 rounded-xl p-4 text-[#111827] placeholder-[#111827]/40 focus:border-[#F4B942] focus:bg-[#FFFFFF] focus:outline-none transition-colors text-base leading-relaxed resize-none"
                         />
-                        <p className="font-sans text-xs text-[#FAF8F1]/60 italic">
+                        <p className="font-sans text-xs text-[#111827]/60 italic">
                           Example: We&apos;re planning to expand into another city and need advice on funding, GST implications, and compliance.
                         </p>
                       </div>
 
                       {/* BUSINESS NAME */}
                       <div className="space-y-1">
-                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#FFD978] block">
+                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#F4B942] block">
                           BUSINESS NAME (OPTIONAL)
                         </label>
                         <input
@@ -495,19 +495,19 @@ export function ConsultationCTA({
                           placeholder="ABC Industries Pvt. Ltd."
                           value={businessName}
                           onChange={(e) => setBusinessName(e.target.value)}
-                          className="w-full bg-transparent border-b border-white/20 focus:border-[#F4B942] text-[#FAF8F1] py-2.5 text-base placeholder-[#FAF8F1]/40 focus:outline-none transition-colors"
+                          className="w-full bg-transparent border-b border-[#FFD978]/50 focus:border-[#F4B942] text-[#111827] py-2.5 text-base placeholder-[#111827]/40 focus:outline-none transition-colors"
                         />
                       </div>
 
                       {/* INDUSTRY DROPDOWN */}
                       <div className="space-y-1">
-                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#FFD978] block">
+                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#F4B942] block">
                           INDUSTRY
                         </label>
                         <select
                           value={industry}
                           onChange={(e) => setIndustry(e.target.value)}
-                          className="w-full bg-transparent border-b border-white/20 focus:border-[#F4B942] text-[#FAF8F1] py-2.5 text-base focus:outline-none transition-colors [&>option]:bg-[#162B68] [&>option]:text-[#FAF8F1]"
+                          className="w-full bg-transparent border-b border-[#FFD978]/50 focus:border-[#F4B942] text-[#111827] py-2.5 text-base focus:outline-none transition-colors [&>option]:bg-[#FFFFFF] [&>option]:text-[#111827]"
                         >
                           <option value="">Select Industry</option>
                           {INDUSTRY_OPTIONS.map((ind) => (
@@ -520,15 +520,15 @@ export function ConsultationCTA({
                     </div>
 
                     {/* STEP 2 CONTINUE BUTTON */}
-                    <div className="pt-4 flex items-center justify-end border-t border-white/15">
+                    <div className="pt-4 flex items-center justify-end border-t border-[#FFD978]/40">
                       <button
                         type="button"
                         onClick={handleStep2Continue}
                         disabled={!requirement.trim()}
                         className={`px-8 py-3.5 rounded-full font-sans font-bold text-xs uppercase tracking-wider transition-all duration-300 cursor-pointer flex items-center space-x-2.5 ${
                           requirement.trim()
-                            ? "bg-[#F4B942] hover:bg-[#FFD978] text-[#111827] shadow-lg"
-                            : "bg-white/15 text-[#FAF8F1]/40 cursor-not-allowed"
+                            ? "bg-[#F4B942] hover:bg-[#FFD978] text-[#111827] shadow-md"
+                            : "bg-[#FFD978]/30 text-[#111827]/40 cursor-not-allowed"
                         }`}
                       >
                         <span>Continue</span>
@@ -542,16 +542,16 @@ export function ConsultationCTA({
                 {step === 3 && (
                   <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col justify-between">
                     <div className="space-y-1.5">
-                      <h3 className="font-serif font-bold text-2xl sm:text-3xl lg:text-[32px] text-[#FAF8F1] leading-tight">
+                      <h3 className="font-serif font-bold text-2xl sm:text-3xl lg:text-[32px] text-[#111827] leading-tight">
                         How would you like us to reach you?
                       </h3>
-                      <p className="font-sans text-[#FAF8F1]/80 text-sm sm:text-base leading-relaxed">
-                        Topic: <span className="text-[#FFD978] font-semibold">{selectedTopic?.title}</span>
+                      <p className="font-sans text-[#111827]/80 text-sm sm:text-base leading-relaxed">
+                        Topic: <span className="text-[#F4B942] font-semibold">{selectedTopic?.title}</span>
                       </p>
                     </div>
 
                     {errorMessage && (
-                      <div className="p-3 rounded-xl bg-red-500/20 border border-red-400/40 text-red-200 text-xs font-medium">
+                      <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
                         {errorMessage}
                       </div>
                     )}
@@ -559,7 +559,7 @@ export function ConsultationCTA({
                     <div className="space-y-5 max-w-2xl py-2 flex-1">
                       {/* FULL NAME */}
                       <div className="space-y-1">
-                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#FFD978] block">
+                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#F4B942] block">
                           FULL NAME *
                         </label>
                         <input
@@ -568,13 +568,13 @@ export function ConsultationCTA({
                           placeholder="e.g. Ramesh Kumar"
                           value={fullName}
                           onChange={(e) => setFullName(e.target.value)}
-                          className="w-full bg-transparent border-b border-white/20 focus:border-[#F4B942] text-[#FAF8F1] py-3 text-base placeholder-[#FAF8F1]/40 focus:outline-none transition-colors"
+                          className="w-full bg-transparent border-b border-[#FFD978]/50 focus:border-[#F4B942] text-[#111827] py-3 text-base placeholder-[#111827]/40 focus:outline-none transition-colors"
                         />
                       </div>
 
                       {/* PREFERRED CONTACT METHOD */}
                       <div className="space-y-2 pt-2">
-                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#FFD978] block">
+                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#F4B942] block">
                           PREFERRED CONTACT METHOD *
                         </label>
                         <div className="grid grid-cols-3 gap-3">
@@ -590,12 +590,12 @@ export function ConsultationCTA({
                                 }}
                                 className={`p-3 rounded-full border text-xs sm:text-sm font-sans font-medium transition-all cursor-pointer flex items-center justify-center gap-2 ${
                                   isChecked
-                                    ? "bg-[#F4B942]/20 border-[#F4B942] text-[#FAF8F1] font-bold"
-                                    : "bg-white/[0.06] border-white/15 text-[#FAF8F1]/80 hover:border-white/35"
+                                    ? "bg-[#FFD978]/30 border-[#F4B942] text-[#111827] font-bold"
+                                    : "bg-[#FAF8F1] border-[#FFD978]/40 text-[#111827]/80 hover:border-[#F4B942]"
                                 }`}
                               >
-                                <span className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0 ${isChecked ? "border-[#F4B942] bg-[#F4B942]" : "border-white/40"}`}>
-                                  {isChecked && <span className="w-1.5 h-1.5 rounded-full bg-[#1F3A8A]" />}
+                                <span className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0 ${isChecked ? "border-[#F4B942] bg-[#F4B942]" : "border-[#111827]/40"}`}>
+                                  {isChecked && <span className="w-1.5 h-1.5 rounded-full bg-[#FFFFFF]" />}
                                 </span>
                                 <span>{method}</span>
                               </button>
@@ -606,7 +606,7 @@ export function ConsultationCTA({
 
                       {/* CONDITIONAL CONTACT VALUE */}
                       <div className="space-y-1 pt-2">
-                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#FFD978] block">
+                        <label className="font-mono text-xs font-bold uppercase tracking-wider text-[#F4B942] block">
                           {preferredMethod === "Phone Call"
                             ? "PHONE NUMBER *"
                             : preferredMethod === "WhatsApp"
@@ -625,17 +625,17 @@ export function ConsultationCTA({
                           }
                           value={contactValue}
                           onChange={(e) => setContactValue(e.target.value)}
-                          className="w-full bg-transparent border-b border-white/20 focus:border-[#F4B942] text-[#FAF8F1] py-3 text-base placeholder-[#FAF8F1]/40 focus:outline-none transition-colors"
+                          className="w-full bg-transparent border-b border-[#FFD978]/50 focus:border-[#F4B942] text-[#111827] py-3 text-base placeholder-[#111827]/40 focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
 
                     {/* SUBMIT BUTTON */}
-                    <div className="pt-4 flex items-center justify-end border-t border-white/15">
+                    <div className="pt-4 flex items-center justify-end border-t border-[#FFD978]/40">
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#F4B942] hover:bg-[#FFD978] disabled:bg-white/15 text-[#111827] disabled:text-[#FAF8F1]/40 font-sans font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg cursor-pointer flex items-center justify-center space-x-3"
+                        className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#F4B942] hover:bg-[#FFD978] disabled:bg-[#FFD978]/30 text-[#111827] disabled:text-[#111827]/40 font-sans font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md cursor-pointer flex items-center justify-center space-x-3"
                       >
                         {isSubmitting ? (
                           <>
@@ -665,51 +665,51 @@ export function ConsultationCTA({
                       </div>
 
                       {/* HEADING */}
-                      <h3 className="font-serif font-bold text-2xl sm:text-3xl lg:text-[32px] text-[#FAF8F1] leading-tight">
+                      <h3 className="font-serif font-bold text-2xl sm:text-3xl lg:text-[32px] text-[#111827] leading-tight">
                         Thank you. Your consultation request has been received.
                       </h3>
 
                       {/* BODY */}
-                      <p className="font-sans text-[#FAF8F1]/85 text-base sm:text-lg leading-relaxed">
+                      <p className="font-sans text-[#111827]/85 text-base sm:text-lg leading-relaxed">
                         We&apos;ve received your request and assigned it for review. A member of our team will contact you through your preferred communication method within one business day.
                       </p>
 
                       {/* SUMMARY */}
-                      <div className="bg-[#162B68]/80 border border-white/15 rounded-2xl p-4 sm:p-5 space-y-3">
+                      <div className="bg-[#FAF8F1] border border-[#FFD978]/50 rounded-2xl p-4 sm:p-5 space-y-3">
                         <div>
-                          <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#FFD978] block mb-0.5">
+                          <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#F4B942] block mb-0.5">
                             TOPIC
                           </span>
-                          <p className="font-serif text-lg sm:text-xl text-[#FAF8F1] font-bold">
+                          <p className="font-serif text-lg sm:text-xl text-[#111827] font-bold">
                             {selectedTopic?.title || "General Advisory"}
                           </p>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-white/15">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-[#FFD978]/40">
                           <div>
-                            <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#FAF8F1]/60 block mb-0.5">
+                            <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#111827]/60 block mb-0.5">
                               PREFERRED CONTACT METHOD
                             </span>
-                            <p className="font-sans text-sm text-[#FAF8F1]/90 font-medium">
+                            <p className="font-sans text-sm text-[#111827] font-medium">
                               {preferredMethod} ({contactValue})
                             </p>
                           </div>
                           {businessName && (
                             <div>
-                              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#FAF8F1]/60 block mb-0.5">
+                              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#111827]/60 block mb-0.5">
                                 BUSINESS NAME
                               </span>
-                              <p className="font-sans text-sm text-[#FAF8F1]/90 font-medium">
+                              <p className="font-sans text-sm text-[#111827] font-medium">
                                 {businessName}
                               </p>
                             </div>
                           )}
                         </div>
                         {requirement && (
-                          <div className="pt-2 border-t border-white/15">
-                            <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#FAF8F1]/60 block mb-0.5">
+                          <div className="pt-2 border-t border-[#FFD978]/40">
+                            <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-[#111827]/60 block mb-0.5">
                               REQUIREMENT
                             </span>
-                            <p className="font-sans text-sm text-[#FAF8F1]/80 line-clamp-2 italic">
+                            <p className="font-sans text-sm text-[#111827]/80 line-clamp-2 italic">
                               &ldquo;{requirement}&rdquo;
                             </p>
                           </div>
@@ -718,10 +718,10 @@ export function ConsultationCTA({
 
                       {/* NEXT STEPS */}
                       <div className="space-y-3 pt-2">
-                        <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#FFD978] block">
+                        <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#F4B942] block">
                           WHAT HAPPENS NEXT
                         </span>
-                        <ul className="space-y-2.5 font-sans text-sm text-[#FAF8F1]/85">
+                        <ul className="space-y-2.5 font-sans text-sm text-[#111827]/85">
                           <li className="flex items-center gap-3">
                             <span className="w-5 h-5 rounded-full bg-[#F4B942]/20 border border-[#F4B942]/40 flex items-center justify-center text-[#F4B942] text-xs font-bold shrink-0">
                               ✓
@@ -745,11 +745,11 @@ export function ConsultationCTA({
                     </div>
 
                     {/* RETURN */}
-                    <div className="pt-6 border-t border-white/15 w-full">
+                    <div className="pt-6 border-t border-[#FFD978]/40 w-full">
                       <button
                         type="button"
                         onClick={handleReset}
-                        className="font-sans text-sm text-[#FAF8F1]/70 hover:text-[#F4B942] transition-colors cursor-pointer flex items-center gap-2 font-medium"
+                        className="font-sans text-sm text-[#111827]/80 hover:text-[#F4B942] transition-colors cursor-pointer flex items-center gap-2 font-medium"
                       >
                         <span>&larr;</span>
                         <span>Return to Website</span>

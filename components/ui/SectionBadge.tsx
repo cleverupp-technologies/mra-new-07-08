@@ -23,7 +23,7 @@ export function SectionBadge({
   return (
     <Component className={`inline-block mb-3 sm:mb-4 ${alignmentClass}`}>
       <span
-        className={`inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-[#1F3A8A] text-[#FFD978] font-mono text-[11px] sm:text-xs font-bold uppercase tracking-[0.22em] shadow-sm border border-[#FFD978]/25 ${className}`}
+        className={`inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-[#1F3A8A] text-[#FFD978] font-mono text-[11px] sm:text-xs font-bold uppercase tracking-[0.22em] shadow-md border border-[#F4B942] ${className}`}
       >
         {children}
       </span>
