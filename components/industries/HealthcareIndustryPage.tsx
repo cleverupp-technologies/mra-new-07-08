@@ -119,13 +119,29 @@ export function HealthcareIndustryPage() {
 
       {/* 01 — HERO REGION */}
       <section className="relative pt-36 sm:pt-44 lg:pt-48 pb-16 lg:pb-24 border-b border-[#FFD978]/40 overflow-hidden text-left">
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          {/* Original source image at 100% photographic opacity with zero filters or blur */}
           <img
             src="/images/healthcare.jpg"
             alt="Multi-storey hospital building"
-            className="w-full h-full object-cover opacity-15 filter contrast-125"
+            className="w-full h-full object-cover object-right sm:object-center opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F1] via-[#FAF8F1]/85 to-transparent" />
+          {/* Subtle left-to-right fade: soft cream behind left text -> completely transparent right */}
+          <div 
+            className="hidden sm:block absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(250, 248, 241, 0.96) 0%, rgba(250, 248, 241, 0.85) 26%, rgba(250, 248, 241, 0.30) 48%, transparent 68%, transparent 100%)",
+            }}
+          />
+          {/* Subtle mobile top-to-bottom fade */}
+          <div 
+            className="sm:hidden absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(250, 248, 241, 0.94) 0%, rgba(250, 248, 241, 0.50) 45%, transparent 80%)",
+            }}
+          />
         </div>
 
         <Container className="relative z-10">
