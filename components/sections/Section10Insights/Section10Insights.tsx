@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import Heading from "@/components/ui/Heading";
@@ -73,10 +74,12 @@ export default function Section10Insights() {
           >
             {/* Top 50% Image Container */}
             <div className="relative h-[200px] sm:h-[220px] w-full overflow-hidden shrink-0">
-              <img
+              <Image
                 src={item.image}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.05] transition-all duration-700 ease-out"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.05] transition-all duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F1] via-[#FAF8F1]/30 to-transparent" />
             </div>

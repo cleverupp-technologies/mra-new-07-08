@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { 
@@ -141,10 +142,12 @@ export default function Section06Industries() {
                   className="relative overflow-hidden rounded-[22px] border border-[#FFD978]/60 p-5 sm:p-6 flex flex-col justify-end min-h-[300px] sm:min-h-[320px] lg:min-h-[340px] shadow-sm select-none cursor-pointer group hover:border-[#F4B942] transition-colors block"
                 >
                   {/* Bright Background Image */}
-                  <img
+                  <Image
                     src={ind.image}
                     alt={`${ind.name} Industry`}
-                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
                   />
 
                   {/* Subtle Warm Gradient Overlay at Bottom Only */}

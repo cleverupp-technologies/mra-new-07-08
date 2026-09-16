@@ -174,7 +174,7 @@ export function FloatingConsultationCTA() {
 
       {/* FLOATING TRIGGER & CHOICE PANEL CONTAINER */}
       <div
-        className={`fixed bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] right-4 sm:bottom-6 sm:right-6 z-50 pointer-events-none flex flex-col items-end transition-all duration-400 delay-[700ms] motion-reduce:transition-none ${
+        className={`fixed bottom-[calc(1.1rem+env(safe-area-inset-bottom,0px))] right-[76px] sm:bottom-[20px] sm:right-[84px] z-40 pointer-events-none flex flex-col items-end transition-all duration-400 delay-[700ms] motion-reduce:transition-none ${
           isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >

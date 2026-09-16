@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 
 export default function Section02Introduction() {
@@ -48,9 +49,12 @@ export default function Section02Introduction() {
 
         {/* 3. Image: Full-Width Rounded Image */}
         <div className="w-full overflow-hidden rounded-2xl shadow-md border border-[#FFD978]/30">
-          <img
+          <Image
             src="/images/section-02-team.jpg"
             alt="Manesh Rineesh & Associates Chartered Accountants Firm Team"
+            width={1376}
+            height={768}
+            sizes="(max-width: 1024px) 100vw, 75vw"
             className="w-full h-auto aspect-[16/10] sm:aspect-[16/9] object-cover"
           />
         </div>
@@ -96,9 +100,12 @@ export default function Section02Introduction() {
 
             {/* BELOW STATEMENT: Large Practice Team Photograph */}
             <div className="w-full overflow-hidden rounded-[28px] border border-[#FFD978]/30 shadow-lg group relative">
-              <img
+              <Image
                 src="/images/section-02-team.jpg"
                 alt="Manesh Rineesh & Associates Chartered Accountants Firm Team"
+                width={1376}
+                height={768}
+                sizes="(max-width: 1024px) 100vw, 75vw"
                 className="w-full h-auto aspect-[16/8.5] object-cover opacity-95 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.015]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/10 via-transparent to-transparent pointer-events-none" />

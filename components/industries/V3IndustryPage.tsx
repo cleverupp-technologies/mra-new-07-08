@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   TrendingUp,
   Wallet,
@@ -107,10 +108,12 @@ export function V3IndustryPage({ industry }: V3IndustryPageProps) {
         {industry.image && (
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             {/* Original source image at 100% photographic opacity with zero filters or blur */}
-            <img
+            <Image
               src={industry.image}
               alt={industry.imageAlt || industry.name}
-              className="w-full h-full object-cover object-right sm:object-center opacity-100"
+              fill
+              sizes="100vw"
+              className="object-cover object-right sm:object-center opacity-100"
             />
             {/* Subtle left-to-right fade: soft cream behind left text -> completely transparent right */}
             <div 

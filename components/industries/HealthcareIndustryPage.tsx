@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { getHealthcareProblems } from "@/content/v2/problems";
 import { Container } from "@/components/layout/Container";
 import { SectionBadge } from "@/components/ui/SectionBadge";
@@ -121,10 +122,12 @@ export function HealthcareIndustryPage() {
       <section className="relative pt-36 sm:pt-44 lg:pt-48 pb-16 lg:pb-24 border-b border-[#FFD978]/40 overflow-hidden text-left">
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           {/* Original source image at 100% photographic opacity with zero filters or blur */}
-          <img
+          <Image
             src="/images/healthcare.jpg"
             alt="Multi-storey hospital building"
-            className="w-full h-full object-cover object-right sm:object-center opacity-100"
+            fill
+            sizes="100vw"
+            className="object-cover object-right sm:object-center opacity-100"
           />
           {/* Subtle left-to-right fade: soft cream behind left text -> completely transparent right */}
           <div 

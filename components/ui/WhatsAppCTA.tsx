@@ -9,10 +9,10 @@ export function WhatsAppCTA() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Manesh Rineesh & Associates on WhatsApp"
-      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.5)] hover:scale-105 active:scale-95 transition-all duration-200 ease-out cursor-pointer group"
+      className="fixed bottom-[20px] right-[20px] z-[9999] w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_4px_16px_rgba(37,211,102,0.45)] hover:shadow-[0_6px_22px_rgba(37,211,102,0.6)] hover:scale-105 active:scale-95 transition-all duration-200 ease-out cursor-pointer pointer-events-auto"
     >
       <svg
-        className="w-6 h-6 fill-current"
+        className="w-6 h-6 sm:w-6 sm:h-6 fill-current"
         viewBox="0 0 24 24"
         aria-hidden="true"
       >

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -139,9 +140,12 @@ export function HeroNav() {
             <Link href="/" className="flex items-center gap-3.5 lg:gap-4 xl:gap-5 select-none group shrink-0">
               {/* CA India Logo Emblem on Left */}
               <div className="flex items-center justify-center flex-shrink-0">
-                <img
+                <Image
                   src="/images/ca-logo.png"
                   alt="CA India Official Trust Badge"
+                  width={134}
+                  height={100}
+                  priority
                   className="h-10 sm:h-11 lg:h-13 xl:h-[58px] w-auto object-contain max-w-[65px] lg:max-w-[75px] xl:max-w-[82px] opacity-95 transition-opacity group-hover:opacity-100 drop-shadow"
                 />
               </div>

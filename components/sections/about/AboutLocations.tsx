@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail } from "lucide-react";
 
@@ -72,10 +73,12 @@ export function AboutLocations() {
             >
               {/* Large Office Photography */}
               <div className="relative h-[200px] sm:h-[240px] w-full overflow-hidden shrink-0">
-                <img
+                <Image
                   src={off.image}
                   alt={off.city}
-                  className="w-full h-full object-cover opacity-60 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700 ease-out"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover opacity-60 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111214] via-[#111214]/50 to-transparent" />
                 <div className="absolute top-4 left-4">
